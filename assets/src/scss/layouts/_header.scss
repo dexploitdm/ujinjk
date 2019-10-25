@@ -18,7 +18,13 @@ header .header-layout .logo {
   order: 1; }
 header .header-layout .u-menu {
   -ms-flex-order: 2;
-  order: 2; }
+  order: 2;
+  margin-right: auto;
+  padding-left: 77px;
+  @media (max-width: $large-media) {
+    padding-left: 30px;
+  }
+}
 header .header-layout .call {
   -ms-flex-order: 3;
   order: 3;
@@ -27,7 +33,7 @@ header .header-layout .call-set .call-link {
   color: $color-default;
   font-size: 14px;
   line-height: 92%;
-  text-decoration: underline; }
+  text-decoration: none; }
 header .header-layout .call-phone {
   padding-top: 8px; }
 header .header-layout .call-phone a {

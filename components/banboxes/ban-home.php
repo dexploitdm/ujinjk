@@ -7,33 +7,35 @@
         <div class="head-box-desc">
 
             <div class="title-h1 title-box"><?php the_content(); ?></div>
-            <div class="head-btn">
-                <a href="#downloadDemo" class="jk-btn down js-demo-down">Скачать демо-версию</a>
-                <a href="#videoDemo" type="button" class="jk-btn play js-demo-video">Смотреть видео</a>
-            </div>
-            <div id="downloadDemo" class="download-popup mfp-hide">
-                <div class="down-popup">
-                    <div class="down-popup-title">Скачать демо-версию</div>
-                    <div class="down-popup-links">
-                        <a href="<?php echo  get_field('googleplay'); ?>" class="link-google">GooglePlay</a>
-                        <a href="<?php echo  get_field('appstore'); ?>" class="link-app">AppStore</a>
-                    </div>
-                </div>
-            </div>
-            <div id="videoDemo" class="video-popup mfp-hide">
-                <div class="video-popup-layout">
-                    <div class="popup-video">
-                        <iframe width="100%" height="315"
-                                src="<?php echo  get_field('link_video'); ?>" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-			<div class="head-box-desc-content">
-                <?php echo  get_field('contentban'); ?>
-            </div>
+           <div class="head-box-container">
+               <div class="head-btn">
+                   <a href="#downloadDemo" class="jk-btn down js-demo-down"><span class="mobile-hidden">Скачать демо-версию</span><span class="block-mobile">Демо-версия</span></a>
+                   <a href="#videoDemo" type="button" class="jk-btn play js-demo-video"><span class="mobile-hidden">Смотреть </span>видео</a>
+               </div>
+               <div id="downloadDemo" class="download-popup mfp-hide">
+                   <div class="down-popup">
+                       <div class="down-popup-title">Скачать демо-версию</div>
+                       <div class="down-popup-links">
+                           <a href="<?php echo  get_field('googleplay'); ?>" class="link-google">GooglePlay</a>
+                           <a href="<?php echo  get_field('appstore'); ?>" class="link-app">AppStore</a>
+                       </div>
+                   </div>
+               </div>
+               <div id="videoDemo" class="video-popup mfp-hide">
+                   <div class="video-popup-layout">
+                       <div class="popup-video">
+                           <iframe width="100%" height="315"
+                                   src="<?php echo  get_field('link_video'); ?>" frameborder="0"
+                                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                   allowfullscreen>
+                           </iframe>
+                       </div>
+                   </div>
+               </div>
+               <div class="head-box-desc-content">
+                   <?php echo  get_field('contentban'); ?>
+               </div>
+           </div>
 
         </div>
     

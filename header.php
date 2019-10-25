@@ -16,7 +16,7 @@
     <div class="header-layout box">
         <div class="logo">
            <a href="<?php echo get_site_url(); ?>/">
-               <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo.svg" title="ujin">
+               <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo-jk.svg" title="ujin">
            </a>
         </div>
         <div class="u-menu">
