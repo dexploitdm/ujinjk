@@ -1,0 +1,240 @@
+.head-box {
+  //background: linear-gradient(153deg, #342B48 33.79%, #0F4F57 69.42%, $color-default 100%);
+  background-size: cover;
+  min-height: 800px;
+  transition: .3s;
+  background-position: center;
+  @media (max-width: $mobile-media) {
+    background-image: url(../images/covers/bg-home.png) !important;
+  }
+}
+
+.head-box-web {
+  //background-image: url(../../images/covers/head-web.svg);
+}
+
+.head-box-layout {
+  padding-top: 92px;
+  transition: .3s;
+}
+
+.head-box-layout.double-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.head-box-layout {
+  .head-box-cover {
+    margin-top: -85px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.head-box-layout .head-box-desc {
+  padding-top: 150px;
+  transition: .3s;
+}
+
+.head-box-layout .head-box-desc .title-h1 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 120%;
+
+  p {
+    &:last-child,
+    &:first-child {
+      color: $color-default;
+    }
+
+    &:nth-child(2) {
+      font-weight: 300;
+    }
+  }
+}
+
+.head-box-desc-content {
+  color: $color-white;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 130%;
+
+  ul {
+    li {
+      color: $color-gray;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+      padding-bottom: 16px;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 23px;
+        left: 0;
+        background-size: cover;
+        top: -3px;
+        background-image: url(../images/icons/blue-check.svg);
+      }
+    }
+  }
+}
+.head-btn {
+  display: flex;
+  padding: 40px 0;
+  .jk-btn {
+    &:first-child {
+      margin-right: 50px;
+    }
+  }
+}
+.head-cont {
+  display: flex;
+  justify-content: space-between;
+  &-title {
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 100%;
+    color: $color-default;
+  }
+  &-desc {
+    max-width: 500px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    color: $color-white;
+  }
+}
+.ban-counter {
+  padding-top: 100px;
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  &-item {
+
+  }
+  &-icon {
+    height: 64px;
+    img {
+      max-width: 76px;
+    }
+  }
+  &-label {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 100%;
+    color: $color-default;
+    max-width: 235px;
+  }
+  &-number {
+    font-weight: bold;
+    font-size: 120px;
+    line-height: 120%;
+    color: $color-white;
+    text-shadow: 0 0 15px rgba(14, 245, 255, 0.6);
+  }
+  &-desc {
+    padding-top: 30px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 120%;
+    color: $color-white;
+    max-width: 272px;
+  }
+}
+
+@media (max-width: $large-media) {
+  .head-box {
+    min-height: 736px;
+    background-position: bottom;
+  }
+  .head-box-layout.double-box {
+    align-items: center;
+  }
+  .head-box-layout .head-box-cover {
+    img {
+      width: 100%;
+    }
+  }
+  .head-box-layout {
+    padding-top: 30px;
+
+    .head-box-desc {
+      padding-top: 130px;
+    }
+  }
+  .head-box-two-layout-content {
+    padding-top: 150px;
+  }
+}
+
+@media (max-width: $tablet-media) {
+  .head-box-layout .head-box-cover {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-media) {
+  .head-box {
+    min-height: 546px;
+  }
+  .head-box-two {
+    min-height: 546px;
+  }
+  .head-box-two-desc {
+    font-size: 12px;
+    line-height: normal;
+  }
+  .head-box-layout .head-box-desc {
+    padding-top: 90px;
+  }
+
+  .head-box-layout .head-box-desc-boxes.flex-wrap .head-box-desc-boxes-item {
+    img {
+      width: 22%;
+    }
+  }
+  .head-box-layout .head-box-desc-boxes {
+    flex-wrap: wrap;
+  }
+  .head-box-layout .head-box-desc-boxes-item {
+    flex-basis: 100%;
+    margin-bottom: -8px;
+    margin-left: 10px;
+
+    img {
+      width: 20%;
+    }
+  }
+  .head-box-layout .other-desc-content p {
+    font-size: 12px;
+    line-height: normal;
+  }
+  .head-box-layout .other-desc .head-box-desc-boxes-item span {
+    margin-left: -12px;
+  }
+  .head-box-layout .head-box-desc-boxes-item span {
+    font-size: 13px;
+    line-height: normal;
+  }
+  .box-developers {
+    min-height: auto;
+
+    .head-box-layout .other-desc .other-desc-content {
+      padding-top: 10px;
+      padding-bottom: 30px;
+
+    }
+  }
+}
+
+@media (max-width: $mobile-media-small) {
+  .head-box-layout .head-box-desc-boxes-item span {
+    font-size: 13px;
+    line-height: normal;
+  }
+}
