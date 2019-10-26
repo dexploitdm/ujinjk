@@ -1,0 +1,286 @@
+//Слайдер реализованых проектов
+.projects-slider {
+  padding-top: 100px;
+  margin-bottom: 100px;
+  flex-basis: 100%;
+  order: 3;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    background-color: $color-dark;
+    right: 0;
+    width: 67%;
+    min-height: 822px;
+    @media (max-width: $tablet-media){
+      min-height: 100%;
+    }
+  }
+  &-head {
+    display: flex;
+    justify-content: space-between;
+
+    .projects-all {
+      a {
+        position: relative;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 120%;
+        color: $color-blue;
+        text-decoration: none;
+        padding-right: 42px;
+        transition: .3s;
+
+        &:after {
+          content: '';
+          position: absolute;
+          height: 32px;
+          width: 32px;
+          right: 0;
+          background-size: cover;
+          background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16' cy='16' r='15' stroke='%230090A1' stroke-width='2'/%3E%3Cpath d='M23.7071 16.7071C24.0976 16.3166 24.0976 15.6834 23.7071 15.2929L17.3431 8.92893C16.9526 8.53841 16.3195 8.53841 15.9289 8.92893C15.5384 9.31946 15.5384 9.95262 15.9289 10.3431L21.5858 16L15.9289 21.6569C15.5384 22.0474 15.5384 22.6805 15.9289 23.0711C16.3195 23.4616 16.9526 23.4616 17.3431 23.0711L23.7071 16.7071ZM9 17H23V15H9V17Z' fill='%230090A1'/%3E%3C/svg%3E%0A");
+        }
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .swiper-container-pr {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: $color-dark;
+    display: flex;
+    position: relative;
+  }
+
+
+}
+
+
+.p-slider {
+  padding-top: 30px;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+
+  .swiper-pagination {
+    //opacity: 0;
+  }
+
+  .box-btn {
+    position: relative;
+    width: 200px;
+    .swiper-button-prev {
+      top: 15px;
+      bottom: 0;
+      left: -25px;
+
+      &:after {
+        content: '';
+        width: 39px;
+        height: 39px;
+        transform: rotate(180deg);
+        background-image: url("data:image/svg+xml,%3Csvg width='39' height='39' viewBox='0 0 39 39' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 19C9.44772 19 9 19.4477 9 20C9 20.5523 9.44772 21 10 21L10 19ZM28.7071 20.7071C29.0976 20.3166 29.0976 19.6834 28.7071 19.2929L22.3431 12.9289C21.9526 12.5384 21.3195 12.5384 20.9289 12.9289C20.5384 13.3195 20.5384 13.9526 20.9289 14.3431L26.5858 20L20.9289 25.6569C20.5384 26.0474 20.5384 26.6805 20.9289 27.0711C21.3195 27.4616 21.9526 27.4616 22.3431 27.0711L28.7071 20.7071ZM10 21L28 21L28 19L10 19L10 21Z' fill='%23FF9500'/%3E%3Ccircle cx='19.5' cy='19.5' r='19' stroke='%23FF9500'/%3E%3C/svg%3E%0A");
+      }
+    }
+
+    .swiper-button-next {
+      top: 14px;
+      right: 0;
+      bottom: 0;
+      left: -11px;
+
+      &:after {
+        content: '';
+        width: 39px;
+        height: 39px;
+        background-image: url("data:image/svg+xml,%3Csvg width='39' height='39' viewBox='0 0 39 39' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 19C9.44772 19 9 19.4477 9 20C9 20.5523 9.44772 21 10 21L10 19ZM28.7071 20.7071C29.0976 20.3166 29.0976 19.6834 28.7071 19.2929L22.3431 12.9289C21.9526 12.5384 21.3195 12.5384 20.9289 12.9289C20.5384 13.3195 20.5384 13.9526 20.9289 14.3431L26.5858 20L20.9289 25.6569C20.5384 26.0474 20.5384 26.6805 20.9289 27.0711C21.3195 27.4616 21.9526 27.4616 22.3431 27.0711L28.7071 20.7071ZM10 21L28 21L28 19L10 19L10 21Z' fill='%23FF9500'/%3E%3Ccircle cx='19.5' cy='19.5' r='19' stroke='%23FF9500'/%3E%3C/svg%3E%0A");
+      }
+    }
+
+    .swiper-pagination {
+      top: 6px;
+      left: -55px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 130%;
+      color: $color-white;
+    }
+  }
+  .projects-block {
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    right: 0;
+    height: 93px;
+    background-color: white;
+    z-index: 0;
+    @media (max-width: $tablet-media){
+      display: none;
+    }
+  }
+  &-box {
+    &-cover {
+      min-height: 800px;
+      background-size: cover;
+      flex-basis: 46%;
+      background-position: center;
+      z-index: 1;
+      img {
+
+      }
+    }
+
+    &-desc {
+      flex-basis: 53%;
+      padding-left: 70px;
+      .p-slider-head {
+        padding-top: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-arrow {
+          width: 114px;
+          height: 50px;
+        }
+
+        &-title {
+          padding-left: 10px;
+          text-align: left;
+
+          a {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 120%;
+            color: $color-white;
+            text-decoration: none;
+
+            span {
+              display: block;
+              font-weight: 300;
+              font-size: 14px;
+              line-height: 130%;
+              color: $color-gray;
+            }
+          }
+
+        }
+      }
+
+      .p-slider-body {
+        padding-top: 40px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 140%;
+        color: $color-white;
+        text-align: left;
+        max-width: 492px;
+        p {
+          padding-bottom: 20px;
+        }
+        ul {
+          padding-left: 79px;
+          li {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 120%;
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+            padding-bottom: 16px;
+            &:before {
+              content: '';
+              position: absolute;
+              width: 30px;
+              height: 23px;
+              left: 0;
+              background-size: cover;
+              top: -7px;
+              background-image: url(../images/icons/blue-check.svg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.manager {
+  padding-top: 38px;
+  text-align: center;
+
+}
+@media (max-width: $mobile-media) {
+  .projects-slider {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    &:before {
+      width: 50%;
+    }
+    .box {
+      padding-left: 0;
+    }
+  }
+  .p-slider {
+
+    &-box {
+      flex-wrap: wrap;
+      &-cover {
+        flex-basis: 100%;
+      }
+      &-desc {
+        flex-basis: 100%;
+        max-width: 100%;
+        padding-left: 0;
+        .p-slider-head-title {
+          a {
+            font-size: 12px;
+            line-height: 120%;
+            span {
+              font-size: 12px;
+            }
+          }
+        }
+        .p-slider-body {
+          padding-top: 16px;
+          font-size: 12px;
+          line-height: 120%;
+        }
+      }
+    }
+    .box-btn {
+      width: 76px;
+      height: 70px;
+      margin: 0 auto;
+      margin-top: 30px;
+      .swiper-button-next {
+        outline: none;
+        top: 0;
+        width: 39px;
+        height: 16px;
+        right: 0;
+      }
+      .swiper-button-prev {
+        outline: none;
+        top: 0;
+        width: 37px;
+        height: 20px;
+        left: 0;
+      }
+      .swiper-pagination {
+        top: 19px;
+        left: -4px;
+      }
+    }
+  }
+}

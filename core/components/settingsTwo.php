@@ -7,29 +7,11 @@ add_action('customize_register', function($customizer) {
             'priority' => 11,
         )
     );
-	$customizer->add_setting('linkImage',
+	$customizer->add_setting('linkPresentProduct',
         array('default' => '#')
     );
-    $customizer->add_setting('appApple',
-        array('default' => '#')
-    );
-    $customizer->add_setting('appGoogle',
-        array('default' => '#')
-    );
-	$customizer->add_control('linkImage', array(
-            'label' => 'Ссылка на иллюстрацию',
-            'section' => 'section_one',
-            'type' => 'text',
-        )
-    );
-    $customizer->add_control('appApple', array(
-            'label' => 'Ссылка на приложение Apple',
-            'section' => 'section_one',
-            'type' => 'text',
-        )
-    );
-    $customizer->add_control('appGoogle', array(
-            'label' => 'Ссылка на приложение Google',
+	$customizer->add_control('linkPresentProduct', array(
+            'label' => 'Ссылка на презентацию продукта',
             'section' => 'section_one',
             'type' => 'text',
         )

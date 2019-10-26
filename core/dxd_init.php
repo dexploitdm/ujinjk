@@ -18,3 +18,8 @@ include_once('components/menu.php');
 //Баннер
 include_once('components/banners/banHome.php');
 include_once('components/banners/counterBan.php');
+//О продукте
+include_once('components/product-advantage.php');
+include_once('components/product-opportunities.php');
+//Проекты
+include_once('components/projects.php');

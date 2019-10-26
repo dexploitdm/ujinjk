@@ -19,50 +19,6 @@ function openMobileMenu() {
     });
 }
 
-var mySwiper = undefined;
-function initSolutions() {
-    var screenWidth = $(window).width();
-    if(screenWidth < 992 && mySwiper == undefined) {
-        mySwiper = new Swiper('.swiper-container2', {
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction',
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    } else if (screenWidth > 991 && mySwiper != undefined) {
-        mySwiper.destroy();
-        mySwiper = undefined;
-        jQuery('.swiper-wrapper').removeAttr('style');
-        jQuery('.swiper-slide').removeAttr('style');
-    }
-}
-//Services
-var mySwiperServices = undefined;
-function initServices() {
-    var screenWidth = $(window).width();
-    if(screenWidth < 992 && mySwiperServices == undefined) {
-        mySwiperServices = new Swiper('.swiper-container3', {
-            pagination: {
-                // el: '.swiper-pagination',
-                type: 'fraction',
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    } else if (screenWidth > 991 && mySwiperServices != undefined) {
-        mySwiperServices.destroy();
-        mySwiperServices = undefined;
-        jQuery('.swiper-wrapper').removeAttr('style');
-        jQuery('.swiper-slide').removeAttr('style');
-    }
-}
-
 function scrollFunny() {
     var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
         V = 0.2;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
@@ -102,9 +58,65 @@ function openModals(){
     });
 }
 
+function productSlider(){
+    mySwiperProduct = new Swiper('.swiper-container6', {
+        slidesPerView: 1,
+        spaceBetween: 100,
+        slideToClickedSlide: false,
+        //loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 40,
+            },
+            968: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+            },
+        }
+    });
+    mySwiperProduct7 = new Swiper('.swiper-container7', {
+        slidesPerView: 1,
+        spaceBetween: 100,
+        slideToClickedSlide: false,
+        //loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 40,
+            },
+            968: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+            },
+        }
+    });
+}
+function initProjects() {
+    mySwiperProjects = new Swiper('.swiper-container-pr', {
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        },
+        //loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+}
+
+
 $(window).on('resize', function(){
-    initSolutions();
-    initServices();
+    //initSolutions();
 });
 
 
@@ -112,8 +124,9 @@ $( document ).ready(function() {
     initHeader();
     //initCardImages();
     openMobileMenu();
-    initSolutions();
-    initServices();
+    //initServices();
     scrollFunny();
     openModals();
+    productSlider();
+    initProjects();
 });

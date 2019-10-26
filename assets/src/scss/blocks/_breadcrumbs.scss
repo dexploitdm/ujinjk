@@ -1,1 +1,35 @@
-
+.breadcrumbs {
+  padding-top: 30px;
+  ul {
+    display: flex;
+    justify-content: center;
+    li {
+      padding-right: 50px;
+      &:last-child {
+        padding-right: 0;
+      }
+      a {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 92%;
+        color: $color-blue;
+        text-decoration: none;
+        position: relative;
+        &.active {
+          color: $color-dark;
+          &:before {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            background-color: $color-dark;
+            bottom: -20px;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: $mobile-media) {
+    display: none;
+  }
+}

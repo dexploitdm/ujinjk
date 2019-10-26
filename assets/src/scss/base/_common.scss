@@ -220,6 +220,11 @@ ul {
 .swiper-slide {
   text-align: left;
 }
+.content-page {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 @media (max-width: $mobile-media) {
   .mobile-hidden {
     display: none;
