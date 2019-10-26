@@ -130,3 +130,10 @@ header.active {
   }
 
 }
+@media (max-width: $mobile-media) {
+  header .header-layout .logo {
+    img {
+      max-width: 149px;
+    }
+  }
+}

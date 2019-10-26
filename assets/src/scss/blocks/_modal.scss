@@ -88,4 +88,8 @@
   .popup-video {
 
   }
+  @media (max-width: $mobile-media) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
