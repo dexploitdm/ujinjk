@@ -16,17 +16,28 @@
                         <div class="swiper-slide p-slider-box">
                             <div class="p-slider-box-cover"
                                  style="background-image: url(<?php the_post_thumbnail_url(); ?>)">
+                                <?php
+                                $elementsIcons = get_field('view_el');
+                                if( $elementsIcons ): ?>
 
+                                    <?php foreach( $elementsIcons as $elementsIcon ): ?>
+                                        <a href="#<?php echo $elementsIcon; ?>" class="<?php echo $elementsIcon; ?>"><div class="el-icon"></div></a>
+                                    <?php endforeach; ?>
+
+                                <?php endif; ?>
+                                <a href="#info_project" class="info_project js-info-pro"><span class="info-icon"></span></a>
                             </div>
                             <div class="p-slider-box-desc">
                                 <div class="p-slider-head">
                                     <div class="p-slider-head-title">
                                         <a href="<?php the_permalink(); ?>">
                                             <?php the_title(); ?>
+
                                             <span><?php echo  get_field('city_projects'); ?> —
                                                 <?php echo get_field( "year_project" ); ?></span>
                                         </a>
                                     </div>
+
                                     <div class="p-slider-head-arrow">
                                         <div class="box-btn">
                                             <div class="swiper-button-next"></div>
@@ -47,6 +58,22 @@
                             </div>
                             <div class="projects-block">
 
+                            </div>
+                            <div id="info_project" class="modal-emblem project-info-modal mfp-hide">
+                                <div class="emblem-layout">
+                                    <div class="emblem-layout-box">
+                                        <div class="emblem-content">
+                                            <div class="emblem-content-text">
+                                                <div class="element-title">
+                                                    <button type="button" class="close-el el-hidden"></button>
+                                                </div>
+                                                <div class="element-desc">
+                                                    <?php echo get_field( "mini_desc" ); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     <?php endwhile; ?>
