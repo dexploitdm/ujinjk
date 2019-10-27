@@ -73,10 +73,12 @@
                     </div>
                     <div class="emblem-content-text">
                         <div class="element-title">
-                            <?php the_title(); ?>
-                            <?php echo $counter ?>
+                           <p><?php the_title(); ?></p>
+                            <button type="button" class="close-el el-hidden"></button>
                         </div>
-                        <?php the_content(); ?>
+                        <div class="element-desc">
+                            <?php the_content(); ?>
+                        </div>
                         <div class="element-mini">
                             <?php echo get_field( "desc_emblem" ); ?>
                         </div>
@@ -101,18 +103,9 @@
                     <img src="<?php the_post_thumbnail_url(); ?>">
                 </div>
             </div>
-            <a href="#e3" class="e3">e3</a>
-            <a href="#e<?php echo $counter + 1 ?>" class="e3">e3</a>
         </div>
     </div>
         <?php endwhile; ?>
     <?php endif; ?>
     <?php wp_reset_query(); ?>
-</div>
-
-<div class="testslider">
-    <a href="#e1" class="e1">e1</a>
-    <a href="#e2" class="e2">e2</a>
-    <a href="#e3" class="e3">e3</a>
-
 </div>

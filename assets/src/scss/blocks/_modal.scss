@@ -93,3 +93,9 @@
     margin-right: 10px;
   }
 }
+.mfp-wrap  {
+  overflow: hidden auto;
+  background: rgba(45, 60, 62, 0.2);
+  mix-blend-mode: normal;
+  backdrop-filter: blur(16px);
+}

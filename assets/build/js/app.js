@@ -52,6 +52,7 @@ function openModals(){
         e3 = $('.e3'),
         e4 = $('.e4'),
         e5 = $('.e5'),
+        closeEl = $('.close-el'),
         modalVideo = $('.js-demo-video');
     modalDemo.magnificPopup({
         type:'inline',
@@ -82,6 +83,10 @@ function openModals(){
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
     e1.click();
+    closeEl.click(function() {
+        $.magnificPopup.close();
+    });
+
 }
 
 function productSlider(){
