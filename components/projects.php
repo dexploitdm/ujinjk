@@ -1,10 +1,15 @@
 <div class="projects-slider">
+    <div class="breadcrumbs">
+        <ul>
+            <li><a href="#">О продукте</a> </li>
+            <li><a href="#" class="active">Наши проекты</a> </li>
+            <li><a href="#">О нас</a> </li>
+            <li><a href="#">Контакты</a> </li>
+        </ul>
+    </div>
     <div class="projects-slider-head box">
         <h2 class="title-h2">Наши проекты</h2>
     </div>
-
-
-
     <div class="p-slider box">
         <div class="swiper-container-pr">
 

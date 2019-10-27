@@ -2,10 +2,14 @@
 .projects-slider {
   padding-top: 100px;
   margin-bottom: 100px;
-  flex-basis: 100%;
-  order: 3;
   position: relative;
   overflow: hidden;
+  flex-basis: 100%;
+  order: 3;
+  .breadcrumbs {
+    margin-top: -100px;
+    margin-bottom: 59px;
+  }
   &:before {
     content: '';
     position: absolute;
