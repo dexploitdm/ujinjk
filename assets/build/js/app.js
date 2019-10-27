@@ -47,6 +47,11 @@ function scrollFunny() {
 
 function openModals(){
     const modalDemo = $('.js-demo-down'),
+        e1 = $('.e1'),
+        e2 = $('.e2'),
+        e3 = $('.e3'),
+        e4 = $('.e4'),
+        e5 = $('.e5'),
         modalVideo = $('.js-demo-video');
     modalDemo.magnificPopup({
         type:'inline',
@@ -56,6 +61,27 @@ function openModals(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
+    e1.magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+    e2.magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+    e3.magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+    e4.magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+    e5.magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+    e1.click();
 }
 
 function productSlider(){

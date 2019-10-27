@@ -99,7 +99,7 @@
       top: 14px;
       right: 0;
       bottom: 0;
-      left: -11px;
+      left: -12px;
 
       &:after {
         content: '';
@@ -218,17 +218,37 @@
 .manager {
   padding-top: 38px;
   text-align: center;
+  .jk-btn {
+    padding: 12px 20px 12px 38px;
+    &:before {
+      left: 15px;
 
+    }
+  }
 }
-@media (max-width: $mobile-media) {
+@media (max-width: 800px) {
   .projects-slider {
     padding-top: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 46px;
+    margin-bottom: 0;
+    &-head {
+      .title-h2 {
+        padding-left: 20px;
+      }
+    }
     &:before {
       width: 50%;
     }
     .box {
       padding-left: 0;
+    }
+    .swiper-slide {
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+    .manager {
+      padding-top: 30px;
+      margin-bottom: 40px;
     }
   }
   .p-slider {
@@ -237,12 +257,24 @@
       flex-wrap: wrap;
       &-cover {
         flex-basis: 100%;
+        min-height: 334px;
       }
       &-desc {
         flex-basis: 100%;
         max-width: 100%;
         padding-left: 0;
+        .p-slider-body {
+          ul {
+            padding-top: 25px;
+            padding-left: 11px;
+          }
+        }
+        .p-slider-head {
+          position: relative;
+        }
         .p-slider-head-title {
+          width: 100%;
+          text-align: center;
           a {
             font-size: 12px;
             line-height: 120%;
@@ -251,31 +283,49 @@
             }
           }
         }
+        .p-slider-head-arrow {
+          position: absolute;
+          width: 100%;
+        }
         .p-slider-body {
           padding-top: 16px;
           font-size: 12px;
           line-height: 120%;
+          max-width: initial;
+          padding-left: 20px;
+          .mini-desc {
+            display: none;
+          }
         }
       }
     }
+    .swiper-pagination {
+      display: none;
+    }
     .box-btn {
-      width: 76px;
+      width: 100%;
       height: 70px;
-      margin: 0 auto;
-      margin-top: 30px;
+      margin: 20px auto 0 auto;
+      display: flex;
+      justify-content: space-between;
       .swiper-button-next {
         outline: none;
         top: 0;
         width: 39px;
         height: 16px;
         right: 0;
+        position: initial;
+        order: 2;
       }
       .swiper-button-prev {
         outline: none;
         top: 0;
-        width: 37px;
+        width: 39px;
         height: 20px;
         left: 0;
+        margin-left: 20px;
+        position: initial;
+        order: 1;
       }
       .swiper-pagination {
         top: 19px;
@@ -283,4 +333,118 @@
       }
     }
   }
+}
+.modal-emblem {
+  position: relative;
+  background-color: $color-dark;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6);
+  border-radius: 40px;
+  box-sizing: border-box;
+  width: auto;
+  margin: auto;
+  max-width: 800px;
+  color: $color-white;
+  .emblem-layout {
+    padding: 20px 30px;
+    min-height: 480px;
+    &-box {
+      position: relative;
+    }
+  }
+  .emblem-content {
+    display: flex;
+    max-width: 380px;
+    &-text {
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 120%;
+      padding-left: 26px;
+    }
+  }
+  .element-title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 120%;
+    color: $color-white;
+    padding-bottom: 22px;
+  }
+  .element-mini {
+    padding-top: 30px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+  }
+  .element-icon {
+
+  }
+  .emblem-cover {
+    position: absolute;
+    right: 0;
+    top: -50px;
+  }
+  .mfp-close {
+    opacity: 1;
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='25' viewBox='0 0 25 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L23 23' stroke='%23FF9500' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M23 2L2 23' stroke='%23FF9500' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 30px;
+  }
+  .element-arrows {
+    margin-bottom: 64px;
+    .prev {
+      position: relative;
+      outline: none;
+      cursor: pointer;
+      &:after {
+        content: '';
+        position: absolute;
+        background-size: cover;
+        background-image: url("data:image/svg+xml,%3Csvg width='47' height='28' viewBox='0 0 47 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d)'%3E%3Cpath d='M36.3536 13.6464C36.5488 13.8417 36.5488 14.1583 36.3536 14.3536L33.1716 17.5355C32.9763 17.7308 32.6597 17.7308 32.4645 17.5355C32.2692 17.3403 32.2692 17.0237 32.4645 16.8284L35.2929 14L32.4645 11.1716C32.2692 10.9763 32.2692 10.6597 32.4645 10.4645C32.6597 10.2692 32.9763 10.2692 33.1716 10.4645L36.3536 13.6464ZM10 13.5L36 13.5L36 14.5L10 14.5L10 13.5Z' fill='%230EF5FF'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d' x='0' y='0.318115' width='46.5' height='27.364' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.054902 0 0 0 0 0.960784 0 0 0 0 1 0 0 0 0.8 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+        width: 34px;
+        height: 25px;
+        transform: rotate(180deg);
+      }
+      &.not {
+        cursor: default;
+        &:after {
+          background-image: url("data:image/svg+xml,%3Csvg width='27' height='8' viewBox='0 0 27 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.646447 3.64645C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646447 3.64645ZM27 3.5L1 3.5L1 4.5L27 4.5L27 3.5Z' fill='%23B8C2C4'/%3E%3C/svg%3E%0A");
+          transform: rotate(360deg);
+          width: 27px;
+          height: 8px;
+          top: 8px;
+        }
+      }
+    }
+    .next {
+      position: relative;
+      outline: none;
+      margin-left: 30px;
+      cursor: pointer;
+      &:after {
+        content: '';
+        position: absolute;
+        background-size: cover;
+        background-image: url("data:image/svg+xml,%3Csvg width='47' height='28' viewBox='0 0 47 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg filter='url(%23filter0_d)'%3E%3Cpath d='M36.3536 13.6464C36.5488 13.8417 36.5488 14.1583 36.3536 14.3536L33.1716 17.5355C32.9763 17.7308 32.6597 17.7308 32.4645 17.5355C32.2692 17.3403 32.2692 17.0237 32.4645 16.8284L35.2929 14L32.4645 11.1716C32.2692 10.9763 32.2692 10.6597 32.4645 10.4645C32.6597 10.2692 32.9763 10.2692 33.1716 10.4645L36.3536 13.6464ZM10 13.5L36 13.5L36 14.5L10 14.5L10 13.5Z' fill='%230EF5FF'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_d' x='0' y='0.318115' width='46.5' height='27.364' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset/%3E%3CfeGaussianBlur stdDeviation='5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.054902 0 0 0 0 0.960784 0 0 0 0 1 0 0 0 0.8 0'/%3E%3CfeBlend mode='normal' in2='BackgroundImageFix' result='effect1_dropShadow'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_dropShadow' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E%0A");
+        width: 34px;
+        height: 25px;
+      }
+      &.not {
+        cursor: default;
+        &:after {
+          background-image: url("data:image/svg+xml,%3Csvg width='27' height='8' viewBox='0 0 27 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.646447 3.64645C0.451184 3.84171 0.451184 4.15829 0.646447 4.35355L3.82843 7.53553C4.02369 7.7308 4.34027 7.7308 4.53553 7.53553C4.7308 7.34027 4.7308 7.02369 4.53553 6.82843L1.70711 4L4.53553 1.17157C4.7308 0.976311 4.7308 0.659728 4.53553 0.464466C4.34027 0.269204 4.02369 0.269204 3.82843 0.464466L0.646447 3.64645ZM27 3.5L1 3.5L1 4.5L27 4.5L27 3.5Z' fill='%23B8C2C4'/%3E%3C/svg%3E%0A");
+          transform: rotate(180deg);
+          width: 27px;
+          height: 8px;
+          top: 8px;
+          left: 8px;
+        }
+      }
+    }
+  }
+  .element-btn {
+
+  }
+
 }

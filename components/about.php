@@ -1,0 +1,3 @@
+<div class="about">
+    О нас
+</div>

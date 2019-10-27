@@ -23,3 +23,4 @@ include_once('components/product-advantage.php');
 include_once('components/product-opportunities.php');
 //Проекты
 include_once('components/projects.php');
+include_once('components/emblem-projects.php');
