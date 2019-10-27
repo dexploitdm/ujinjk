@@ -43,7 +43,10 @@
             <?php if ($service_projects->have_posts()): ?>
             <?php while ($service_projects->have_posts()) : $service_projects->the_post(); ?>
             <div class="service-item">
-                <img src="<?php the_post_thumbnail_url(); ?>">
+                <div class="service-icon">
+                    <img src="<?php the_post_thumbnail_url(); ?>">
+                </div>
+
                 <div class="service-box">
                     <div class="service-box-title">
                         <?php the_title(); ?>
@@ -63,6 +66,10 @@
         <!-- TODO: Mobile Slider -->
         <div class="service-layout block-mobile ">
 
+        </div>
+
+        <div class="manager">
+            <a href="#" type="button" class="jk-btn call">Связаться с менеджером</a>
         </div>
     </div>
 
