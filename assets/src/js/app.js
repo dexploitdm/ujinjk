@@ -53,6 +53,7 @@ function openModals(){
         e4 = $('.e4'),
         e5 = $('.e5'),
         jsInfoProject = $('.js-info-pro'),
+        callManager = $('.js-form-manager'),
         closeEl = $('.close-el'),
         modalVideo = $('.js-demo-video');
     modalDemo.magnificPopup({
@@ -87,7 +88,11 @@ function openModals(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
-
+    callManager.magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+    callManager.click();
     closeEl.click(function() {
         $.magnificPopup.close();
     });

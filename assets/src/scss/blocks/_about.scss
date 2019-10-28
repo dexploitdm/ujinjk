@@ -1,6 +1,7 @@
 .about {
   flex-basis: 100%;
   order: 4;
+  overflow: hidden;
   .breadcrumbs {
     padding-top: 60px;
     ul {
@@ -56,6 +57,25 @@
       font-size: 14px;
       line-height: 120%;
     }
+    .swiper-container-abouts {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .service-mobile {
+    position: relative;
+  }
+  .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: transparent;
+    opacity: 1;
+    border: 1px solid $color-default;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $color-default;
+    width: 10px;
+    height: 10px;
   }
   @media (max-width: $mobile-media) {
     &-desc {
@@ -133,6 +153,9 @@
     .service-box {
       color: $color-white;
       padding: 70px 10px 10px 60px;
+      @media (max-width: $mobile-media) {
+        padding: 40px 20px 10px 20px;
+      }
       &-title {
         font-weight: bold;
         font-size: 18px;
@@ -153,6 +176,29 @@
   @media (max-width: $tablet-media) {
     .service-layout {
       grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: $mobile-media) {
+    .service-layout  {
+      .service-item {
+        min-height: 272px;
+        &:after {
+          width: 38px;
+          height: 38px;
+        }
+        .service-icon {
+          width: 24px;
+          height: 24px;
+          top: -3px;
+          left: -3px;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .manager {
+      padding-top: 25px;
     }
   }
 }

@@ -59,24 +59,8 @@
                 <?php endwhile; ?>
             <?php endif; ?>
             <?php wp_reset_query(); ?>
-
-
         </div>
-        <style>
-        .about {
-            overflow: hidden;
-        }
-            .swiper-container-abouts {
-                    width: 100%;
-    height: 100%;
-            }
-            .service-mobile {
-              position: relative;
-            }
-           
-        </style>
 
-        <!-- TODO: Mobile Slider -->
         <div class="service-layout block-mobile service-mobile box">
             <div class="swiper-container-abouts">
           
@@ -110,7 +94,7 @@
         </div>
 
         <div class="manager">
-            <a href="#" type="button" class="jk-btn call">Связаться с менеджером</a>
+            <a href="#manager" type="button" class="jk-btn call js-form-manager">Связаться с менеджером</a>
         </div>
     </div>
 

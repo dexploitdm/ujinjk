@@ -99,6 +99,30 @@
         </div>
     </div>
 </footer>
+<div id="manager" class="modal-manager mfp-hide">
+    <div class="modal-manager-layout">
+        <div class="manager-title">
+            Введите ваш номер теелфона и E-mail для отправки расчета
+        </div>
+        <form class="manager-form">
+            <div class="u-controls">
+                <input type="text" class="u-input" name="fio" placeholder="Фамилия, Имя">
+            </div>
+            <div class="u-controls">
+                <input type="text" class="u-input" name="phone" placeholder="Фамилия, Имя">
+            </div>
+            <div class="u-controls">
+                <input type="text" class="u-input" name="email" placeholder="Ваш E-mail">
+            </div>
+            <div class="manager-agree">
+                Нажимая кнопку Отправить, вы принимаете <a href="#">условия соглашения</a>
+            </div>
+            <div class="manager-btn">
+                <button type="submit" class="jk-btn jk-btn-neon call ">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>
 <?php wp_footer(); ?>
 
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/swiper.js"></script>

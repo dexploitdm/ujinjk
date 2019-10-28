@@ -57,7 +57,7 @@
                                     </div>
                                     <?php the_content(); ?>
                                     <div class="manager">
-                                        <a href="#" type="button" class="jk-btn call">Связаться с менеджером</a>
+                                        <a href="#manager" type="button" class="jk-btn call js-form-manager">Связаться с менеджером</a>
                                     </div>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                             <?php endif; ?>
                         </div>
                         <div class="element-btn">
-                            <a href="#" class="jk-btn call">Связаться с менеджером</a>
+                            <a href="#manager" class="jk-btn call js-form-manager">Связаться с менеджером</a>
                         </div>
                     </div>
                 </div>
