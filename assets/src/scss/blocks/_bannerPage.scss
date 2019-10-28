@@ -1,4 +1,157 @@
 .pageban {
   flex-basis: 100%;
-  order: 2;
+  order: 6;
+  overflow: hidden;
+  &-layout {
+    width: 100%;
+    position: relative;
+  }
+  &-box {
+    padding-top: 60px;
+  }
+  &-block {
+    background-color: $color-white;
+    max-width: 375px;
+  }
+  &-number {
+    padding-bottom: 10px;
+  }
+  &-cover {
+    position: absolute;
+    top: -63px;
+    right: -15em;
+    z-index: -1;
+    img {
+      width: 85%;
+    }
+  }
+  &-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: $color-dark;
+    padding-bottom: 16px;
+  }
+  &-desc {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 120%;
+    color: $color-dark;
+  }
+  &-counter {
+    padding-top: 50px;
+    display: flex;
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &:first-child {
+        .counter-title {
+          max-width: 272px;
+          padding-right: 80px;
+        }
+      }
+      &:nth-child(2){
+        .counter-title {
+          max-width: 200px;
+          padding-right: 80px;
+        }
+      }
+
+    }
+    .counter-number {
+      img {
+        width: 100%;
+      }
+    }
+    .counter-title {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 120%;
+      color: $color-dark;
+      padding-left: 14px;
+    }
+  }
+  &-firm {
+    padding: 20px 0;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    &-logo {
+      text-align: center;
+    }
+    &-desc {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 120%;
+      color: $color-dark;
+    }
+  }
+  @media (max-width: $mobile-media) {
+    order: 1;
+    .pageban-block {
+      background-color: transparent;
+      max-width: 100%;
+    }
+    .pageban-box {
+      padding-top: 18px;
+    }
+    .pageban-number {
+      img {
+        max-width: 125px;
+      }
+    }
+    .pageban-title {
+      font-size: 14px;
+      line-height: 120%;
+      max-width: 203px;
+    }
+    .pageban-desc {
+      font-size: 12px;
+      line-height: 130%;
+    }
+    .pageban-cover {
+      position: absolute;
+      top: -18px;
+      right: 0;
+      z-index: -1;
+      width: 100%;
+      img {
+        width: 54%;
+        text-align: right;
+        position: absolute;
+        right: 0;
+      }
+    }
+    .pageban-counter {
+      padding-top: 18px;
+      flex-wrap: wrap;
+      justify-content: center;
+      &-item {
+        flex-basis: 100%;
+        justify-content: end;
+      }
+      .counter-number {
+        img {
+          max-width: 56px;
+          max-height: 58px;
+        }
+      }
+      .counter-title {
+        font-size: 12px;
+        line-height: 130%;
+      }
+    }
+    .pageban-firm {
+      padding: 6px 0;
+    }
+    .pageban-firm-desc {
+      font-size: 12px;
+      line-height: 130%;
+      max-width: 130px;
+    }
+
+
+
+  }
 }

@@ -1,6 +1,6 @@
 <footer id="form-contact">
     <div class="footer-layout box">
-        <h2 class="title-h2">Получите консультацию</h2>
+        <h2 class="title-h2">Контакты</h2>
         <div class="footer-layout-box" >
             <div class="footer-layout-box_item">
                 <div class="footer-contact">
