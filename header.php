@@ -8,6 +8,7 @@
     <meta name="author" content="Dexploitdm | Дмитрий Паршаков">
     <meta name="theme-color" content="#2D3C3E">
     <link href="<?php  echo get_template_directory_uri() ?>/assets/build/css/core.css" rel="stylesheet">
+	<script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>
     <?php  wp_head(); ?>
 
 </head>

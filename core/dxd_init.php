@@ -25,3 +25,6 @@ include_once('components/product-opportunities.php');
 include_once('components/projects.php');
 include_once('components/emblem-projects.php');
 include_once('components/services-projects.php');
+
+//Квиз
+include_once('components/quiz.php');

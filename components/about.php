@@ -62,10 +62,51 @@
 
 
         </div>
+        <style>
+        .about {
+            overflow: hidden;
+        }
+            .swiper-container-abouts {
+                    width: 100%;
+    height: 100%;
+            }
+            .service-mobile {
+              position: relative;
+            }
+           
+        </style>
 
         <!-- TODO: Mobile Slider -->
-        <div class="service-layout block-mobile ">
+        <div class="service-layout block-mobile service-mobile box">
+            <div class="swiper-container-abouts">
+          
+                <div class="swiper-wrapper">
 
+                 <?php $service_projects = new WP_Query(array('post_type' => 'projects_services', 'order' => 'ASC')) ?>
+            <?php if ($service_projects->have_posts()): ?>
+            <?php while ($service_projects->have_posts()) : $service_projects->the_post(); ?>
+                        <div class="service-item swiper-slide slider-item">
+                            <div class="service-icon">
+                                <img src="<?php the_post_thumbnail_url(); ?>">
+                            </div>
+            
+                            <div class="service-box">
+                                <div class="service-box-title">
+                                    <?php the_title(); ?>
+                                </div>
+                                <div class="service-box-desc">
+                                    <?php the_content(); ?>
+                                </div>
+                            </div>
+                        </div>
+                          <?php endwhile; ?>
+            <?php endif; ?>
+            <?php wp_reset_query(); ?>
+                </div>
+                  <div class="swiper-pagination"></div>
+            </div>
+            
+            
         </div>
 
         <div class="manager">

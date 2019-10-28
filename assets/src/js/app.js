@@ -150,6 +150,19 @@ function initProjects() {
     });
 }
 
+function initAbouts() {
+    mySwiperAbouts = new Swiper('.swiper-container-abouts', {
+		spaceBetween: 30,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        //loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+}
 
 $(window).on('resize', function(){
     //initSolutions();
@@ -165,4 +178,5 @@ $( document ).ready(function() {
     openModals();
     productSlider();
     initProjects();
+	initAbouts();
 });
