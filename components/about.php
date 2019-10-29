@@ -1,10 +1,10 @@
-<div class="about" style="background-image: url(<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/bg_about.png)">
+<div class="about anchor" id="about-anchor" style="background-image: url(<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/bg_about.png)">
     <div class="breadcrumbs">
         <ul>
-            <li><a href="#">О продукте</a> </li>
-            <li><a href="#">Наши проекты</a> </li>
-            <li><a href="#"  class="active">О нас</a> </li>
-            <li><a href="#">Контакты</a> </li>
+            <li><a href="#product-anchor">О продукте</a> </li>
+            <li><a href="#project-anchor">Наши проекты</a> </li>
+            <li><a class="active" href="#about-anchor">О нас</a> </li>
+            <li><a href="#contact-anchor">Контакты</a> </li>
         </ul>
     </div>
     <div class="about-head box">

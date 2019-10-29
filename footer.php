@@ -1,4 +1,12 @@
-<footer id="form-contact">
+<footer id="contact-anchor" class="anchor">
+    <div class="breadcrumbs">
+            <ul>
+                <li><a href="#product-anchor">О продукте</a> </li>
+                <li><a href="#project-anchor">Наши проекты</a> </li>
+                <li><a href="#about-anchor">О нас</a> </li>
+                <li><a class="active" href="#contact-anchor">Контакты</a> </li>
+            </ul>
+        </div>
     <div class="footer-layout box">
         <h2 class="title-h2">Контакты</h2>
         <div class="footer-layout-box" >
@@ -13,7 +21,10 @@
                         <a class="footer-contact-item_link" href="mailto:info@mysmartflat.ru">info@ujin.tech</a>
                     </div>
                     <div class="footer-contact-item">
-                        <span>Пишите</span>
+                        <span>Адрес</span>
+                        <a class="footer-contact-item_link" href="mailto:info@mysmartflat.ru">Пермь, Шоссе Космонавтов, 111, корп. 2</a>
+                    </div>
+                    <div class="footer-contact-item">
                         <div class="links-soc">
                             <a href="https://wa.me/79824897387" class="links-soc-w">
                                 <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/whatsapp.png"> <p>Whatsapp</p>
@@ -42,12 +53,13 @@
                                 <input class="u-input js-msg" type="text" placeholder="Вопрос или комментарий" name="msg">
                             </div>
                             <div class="u-controls center">
-                                <button class="u-btn js-submit" type="submit" disabled>
+                                <button class="u-btn js-submit jk-btn-neon" type="submit" disabled>
                                     Отправить
                                 </button>
+                               
                             </div>
-                            <div class="msg-note">Сообщение отправленно</div>
-                            <button class="js-yandex-form" onclick="yaCounter55570948.reachGoal('myForm'); return true;" style="display: none"></button>
+                            <div class="msg-note msg-note-footer">Сообщение отправленно</div>
+                         
                         </form>
 
                     </div>
@@ -109,7 +121,7 @@
                 <input type="text" class="u-input" name="fio" placeholder="Фамилия, Имя">
             </div>
             <div class="u-controls">
-                <input type="text" class="u-input" name="phone" placeholder="Фамилия, Имя">
+                <input type="text" class="u-input" name="phone" placeholder="Номер телефона">
             </div>
             <div class="u-controls">
                 <input type="text" class="u-input" name="email" placeholder="Ваш E-mail">
@@ -122,6 +134,7 @@
             </div>
         </form>
     </div>
+    <div class="msg-note msg-note-manager">Сообщение отправленно</div>
 </div>
 <?php wp_footer(); ?>
 
@@ -141,24 +154,25 @@
     });
     jQuery(document).ready(function($) {
     const formSend = $("#contact");
-	const formSendPartner = $("#formPartner");
-    const messageSend = $(".msg-note");
+	const formSendManager = $("#manager");
+    const messageSendFooter = $(".msg-note-footer");
+    const messageSendManager = $('.msg-note-manager');
 
         formSend.submit(function(e) {
             var str = $(this).serialize();
             e.preventDefault();
             $.ajax({
                 type: "POST",
-                url: "<?php echo get_template_directory_uri() ?>/mail.php",
+                url: "<?php echo get_template_directory_uri() ?>/mail/mail.php",
                 data: str,
                 success: function(msg) {
-                    if(!msg == 'OK') {messageSend.fadeIn();} else {messageSend.fadeIn();}
+                    if(!msg == 'OK') {messageSendFooter.fadeIn();} else {messageSendFooter.fadeIn();}
                 }
             });
             return false;
         });
-		 formSendPartner.submit(function(e) {
-            var str = $(this).serialize();  e.preventDefault();  $.ajax({ type: "POST",  url: "<?php echo get_template_directory_uri() ?>/mail.php",    data: str,  success: function(msg) {if(!msg == 'OK') {messageSend.fadeIn();} else {messageSend.fadeIn();}   } }); return false; });
+		 formSendManager.submit(function(e) {
+            var str = $(this).serialize();  e.preventDefault();  $.ajax({ type: "POST",  url: "<?php echo get_template_directory_uri() ?>/mail/manager.php",    data: str,  success: function(msg) {if(!msg == 'OK') {messageSendManager.fadeIn();} else {messageSendManager.fadeIn();}   } }); return false; });
 		
 		
 });

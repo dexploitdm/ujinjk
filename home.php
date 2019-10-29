@@ -8,6 +8,7 @@ get_header(); ?>
         <?php get_template_part( 'components/banboxes/ban-home'); ?>
         <div class="content-page">
             <?php get_template_part( 'components/product'); ?>
+            <!--<?php get_template_part( 'components/quiz'); ?>-->
             <?php get_template_part( 'components/bannerPage'); ?>
             <?php get_template_part( 'components/projects'); ?>
             <?php get_template_part( 'components/about'); ?>

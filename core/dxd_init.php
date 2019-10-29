@@ -28,3 +28,11 @@ include_once('components/services-projects.php');
 
 //Квиз
 include_once('components/quiz.php');
+//Нам уже доверяют
+include_once('components/partners.php');
+//Наша команда
+include_once('components/ourteam.php');
+//СМИ о нас
+include_once('components/smi.php');
+//Логотипы
+include_once('components/logos.php');

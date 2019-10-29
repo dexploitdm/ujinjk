@@ -16,16 +16,16 @@
 <header class="">
     <div class="header-layout box">
         <div class="logo">
-           <a href="<?php echo get_site_url(); ?>/">
+           <p>
                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo-jk.svg" title="ujin">
-           </a>
+           </p>
         </div>
         <div class="u-menu">
             <ul class="u-menu-list">
-                <li class="u-menu-list-item"><a href="#">О продукте</a> </li>
-                <li class="u-menu-list-item"><a href="#">Наши проекты</a> </li>
-                <li class="u-menu-list-item"><a href="#">О нас</a> </li>
-                <li class="u-menu-list-item"><a href="#">Контакты</a> </li>
+                <li class="u-menu-list-item"><a href="#product-anchor">О продукте</a> </li>
+                <li class="u-menu-list-item"><a href="#project-anchor">Наши проекты</a> </li>
+                <li class="u-menu-list-item"><a href="#about-anchor">О нас</a> </li>
+                <li class="u-menu-list-item"><a href="#contact-anchor">Контакты</a> </li>
             </ul>
         </div>
         <div class="call">
@@ -44,13 +44,13 @@
     </div>
     <div class="drawer-menu">
         <div class="logo">
-            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo.svg" title="ujin">
+            <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo-jk.svg" title="ujin">
         </div>
         <ul class="u-menu-list">
-            <li class="u-menu-list-item"><a href="#">О продукте</a> </li>
-            <li class="u-menu-list-item"><a href="#">Наши проекты</a> </li>
-            <li class="u-menu-list-item"><a href="#">О нас</a> </li>
-            <li class="u-menu-list-item"><a href="#">Контакты</a> </li>
+              <li class="u-menu-list-item link-drawer"><a href="#product-anchor">О продукте</a> </li>
+                <li class="u-menu-list-item link-drawer"><a href="#project-anchor">Наши проекты</a> </li>
+                <li class="u-menu-list-item link-drawer"><a href="#about-anchor">О нас</a> </li>
+                <li class="u-menu-list-item link-drawer"><a href="#contact-anchor">Контакты</a> </li>
         </ul>
     </div>
 </header>

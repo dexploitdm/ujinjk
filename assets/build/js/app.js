@@ -1,3 +1,27 @@
+//Управкление coockie
+function setCookie(c_name,value,exdays)
+{
+   var exdate=new Date();
+   exdate.setDate(exdate.getDate() + exdays);
+   var c_value=escape(value) + ((exdays==null) ? "" : ("; expires="+exdate.toUTCString()));
+   document.cookie=c_name + "=" + c_value;
+}
+
+function getCookie(c_name)
+{
+   var i,x,y,ARRcookies=document.cookie.split(";");
+   for (i=0; i<ARRcookies.length; i++)
+   {
+      x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+      y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+      x=x.replace(/^\s+|\s+$/g,"");
+      if (x==c_name)
+      {
+        return unescape(y);
+      }
+   }
+}
+
 function initHeader(){
     //header
     $(window).scroll(function() {
@@ -13,10 +37,38 @@ function initHeader(){
 
 function openMobileMenu() {
     const btnMenu = $('.js-open-menu'),
+        linkDrawer = $('.link-drawer'),
         header = $('header');
     btnMenu.bind("click", function() {
         header.hasClass('active') ? header.removeClass('active') : header.addClass('active')
     });
+    linkDrawer.bind("click", function() {
+        header.hasClass('active') ? header.removeClass('active') : header.addClass('active')
+    });
+}
+
+function activeLinkMenu(){
+    if(getCookie('activeAnchor')){
+         let oldLink = getCookie('activeAnchor');
+         let newLink = window.location.href + '#' + oldLink
+         document.location.href = newLink;
+    } 
+    
+    
+    jQuery(window).scroll(function(){
+         var $sections = $('.anchor');
+	$sections.each(function(i,el){
+        var top  = $(el).offset().top-100;
+        var bottom = top +$(el).height();
+        var scroll = $(window).scrollTop();
+        var id = $(el).attr('id');
+    	if( scroll > top && scroll < bottom){
+            $('a.active').removeClass('active');
+			$('a[href="#'+id+'"]').addClass('active');
+            setCookie('activeAnchor', id, '30')
+        }
+    })
+ });
 }
 
 function scrollFunny() {
@@ -169,6 +221,63 @@ function initAbouts() {
     });
 }
 
+function initPartners() {
+    mySwiperPartners = new Swiper('.swiper-container-partners', {
+		slidesPerView: 2,
+      spaceBetween: 30,
+        freeMode: true,
+        breakpoints: {
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            968: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 7,
+              spaceBetween: 50,
+            },
+        }
+    });
+}
+function initLogos() {
+    mySwiperPartners = new Swiper('.swiper-container-logos', {
+		slidesPerView: 2,
+        spaceBetween: 30,
+      //freeMode: true,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        },
+        //loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 50,
+            },
+        }
+    });
+}
+
+
 $(window).on('resize', function(){
     //initSolutions();
 });
@@ -178,10 +287,13 @@ $( document ).ready(function() {
     initHeader();
     //initCardImages();
     openMobileMenu();
+    activeLinkMenu();
     //initServices();
     scrollFunny();
     openModals();
     productSlider();
     initProjects();
 	initAbouts();
+	initPartners();
+	initLogos();
 });

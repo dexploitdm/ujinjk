@@ -1,4 +1,4 @@
-<div class="product">
+<div class="product anchor" id="product-anchor">
     <?php get_template_part('components/menu'); ?>
     <div class="product-head box">
         <h2 class="title-h2">О продукте</h2>
@@ -73,5 +73,5 @@
         </div>
 
     </div>
-
+	
 </div>

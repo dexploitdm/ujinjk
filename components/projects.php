@@ -1,10 +1,10 @@
-<div class="projects-slider">
+<div class="projects-slider anchor" id="project-anchor">
     <div class="breadcrumbs">
         <ul>
-            <li><a href="#">О продукте</a> </li>
-            <li><a href="#" class="active">Наши проекты</a> </li>
-            <li><a href="#">О нас</a> </li>
-            <li><a href="#">Контакты</a> </li>
+            <li><a href="#product-anchor">О продукте</a> </li>
+            <li><a class="active" href="#project-anchor">Наши проекты</a> </li>
+            <li><a href="#about-anchor">О нас</a> </li>
+            <li><a href="#contact-anchor">Контакты</a> </li>
         </ul>
     </div>
     <div class="projects-slider-head box">
