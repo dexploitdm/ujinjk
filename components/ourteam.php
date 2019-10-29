@@ -10,6 +10,10 @@
                            <div class="ourteam-box">
                                <div class="ourteam-cover">
                                    <img src="<?php the_post_thumbnail_url(); ?>">
+                                   <?php if( get_field("people_link") ): ?>
+                                       <a href="<?php echo  get_field('people_link'); ?>" target="_blank" class="ourteam-link"></a>
+                                   <?php endif; ?>
+
                                </div>
                                <div class="ourteam-name">
                                    <?php the_title(); ?>
@@ -23,40 +27,3 @@
                     <?php wp_reset_query(); ?>
     </div>
 </div>
-<style>
-.ourteam {
-        padding-bottom: 90px;
-
-}
-    .ourteam-head {
-        padding-bottom: 24px;
-    }
-    .ourteam-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-        grid-column-gap: 32px;
-        grid-row-gap: 36px;
-    }
-    .ourteam-cover {
-        text-align: center;
-        max-width: 138px;
-        max-height: 138px;
-        margin: auto;
-    }
-    .ourteam-name {
-        padding-top: 24px;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 120%;
-        text-align: center;
-        color: #2D3C3E;
-    }
-    .ourteam-desc {
-        padding-top: 10px;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 120%;
-        text-align: center;
-        color: #2D3C3E;
-    }
-</style>

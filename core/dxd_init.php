@@ -34,5 +34,3 @@ include_once('components/partners.php');
 include_once('components/ourteam.php');
 //СМИ о нас
 include_once('components/smi.php');
-//Логотипы
-include_once('components/logos.php');

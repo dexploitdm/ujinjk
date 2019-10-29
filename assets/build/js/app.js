@@ -21,7 +21,6 @@ function getCookie(c_name)
       }
    }
 }
-
 function initHeader(){
     //header
     $(window).scroll(function() {
@@ -70,7 +69,6 @@ function activeLinkMenu(){
     })
  });
 }
-
 function scrollFunny() {
     var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
         V = 0.2;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
@@ -220,12 +218,20 @@ function initAbouts() {
         },
     });
 }
-
 function initPartners() {
     mySwiperPartners = new Swiper('.swiper-container-partners', {
 		slidesPerView: 2,
       spaceBetween: 30,
-        freeMode: true,
+      freeMode: true,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'fraction',
+        },
+        //loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
         breakpoints: {
             320: {
               slidesPerView: 2,
@@ -246,11 +252,38 @@ function initPartners() {
         }
     });
 }
+
+function initPartners() {
+    mySwiperPartners = new Swiper('.swiper-container-partners', {
+		slidesPerView: 2,
+      spaceBetween: 30,
+        freeMode: true,
+        breakpoints: {
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            968: {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 7,
+              spaceBetween: 50,
+            },
+        }
+    });
+}
+
 function initLogos() {
     mySwiperPartners = new Swiper('.swiper-container-logos', {
 		slidesPerView: 2,
-        spaceBetween: 30,
-      //freeMode: true,
+      spaceBetween: 30,
+      freeMode: true,
         pagination: {
             el: '.swiper-pagination',
             type: 'fraction',
@@ -276,7 +309,6 @@ function initLogos() {
         }
     });
 }
-
 
 $(window).on('resize', function(){
     //initSolutions();

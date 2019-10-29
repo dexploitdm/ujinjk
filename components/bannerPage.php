@@ -64,10 +64,9 @@
                 </div>
             </div>
         </div>
-        <?php get_template_part( 'components/partners'); ?>
-        <?php get_template_part( 'components/ourteam'); ?>
-        <?php get_template_part( 'components/smi'); ?>
-        <?php get_template_part( 'components/logos'); ?>
+        <div class="content-other">
+            <?php get_template_part( 'components/partners'); ?>
+        </div>
     </div>
 
 </div>

@@ -22,16 +22,23 @@
                     </div>
                     <div class="footer-contact-item">
                         <span>Адрес</span>
-                        <a class="footer-contact-item_link" href="mailto:info@mysmartflat.ru">Пермь, Шоссе Космонавтов, 111, корп. 2</a>
+                        <a class="footer-contact-item_link" >Пермь, <br> Шоссе Космонавтов, <br> 111, корп. 2</a>
                     </div>
                     <div class="footer-contact-item">
                         <div class="links-soc">
-                            <a href="https://wa.me/79824897387" class="links-soc-w">
-                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/whatsapp.png"> <p>Whatsapp</p>
+                            <a href="#" class="links-soc-vk">
+                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/vk.png">
                             </a>
-                            <a href="tg://resolve?domain=panychelena" class="links-soc-t">
-                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/icons/telegram.png"> <p>Telegram</p>
+                            <a href="#" class="links-soc-fb">
+                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/face.png">
                             </a>
+                            <a href="#" class="links-soc-insta">
+                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/insta.png">
+                            </a>
+                            <a href="#" class="links-soc-youtube">
+                                <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/demo/youtube.png">
+                            </a>
+
                         </div>
                     </div>
                 </div>
@@ -52,8 +59,8 @@
                             <div class="u-controls">
                                 <input class="u-input js-msg" type="text" placeholder="Вопрос или комментарий" name="msg">
                             </div>
-                            <div class="u-controls center">
-                                <button class="u-btn js-submit jk-btn-neon" type="submit" disabled>
+                            <div class="u-controls form-btn">
+                                <button class="jk-btn js-submit jk-btn-neon call" type="submit" disabled>
                                     Отправить
                                 </button>
                                
@@ -68,36 +75,40 @@
         </div>
         <div class="footer-layout-menu">
             <div class="footer-layout-menu-item">
-                <a href="#" class="menu-title">О компании</a>
                 <ul>
-                    <li><a href="<?php echo get_site_url(); ?>/o-kompanii/">О нас</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">Партнерам</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">СМИ о нас</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">База знаний</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
                 </ul>
             </div>
             <div class="footer-layout-menu-item">
-                <a href="#" class="menu-title">Продукты</a>
                 <ul>
-                    <li><a href="<?php echo get_site_url(); ?>/property-developers">Для застройщиков</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/hotels">Для гостиниц</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/communal-services/">Для УК и ТСЖс</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/catalogs">Каталог</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">Маркетплейс</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
                 </ul>
             </div>
             <div class="footer-layout-menu-item">
-                <a href="#" class="menu-title">Приложения</a>
                 <ul>
-                    <li><a href="<?php echo get_site_url(); ?>/">Ujin SmartHome</a> </li>
-                    <li><a href="<?php echo get_site_url(); ?>/">Ujin Bussines</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
+                </ul>
+            </div>
+            <div class="footer-layout-menu-item">
+                <ul>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
+                </ul>
+            </div>
+            <div class="footer-layout-menu-item">
+                <ul>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
+                    <li><a href="<?php echo get_site_url(); ?>/">Ссылка 2</a> </li>
                 </ul>
             </div>
         </div>
         <div class="footer-layout-bottom">
             <div class="footer-layout-bottom_item">
                 <div class="footer-logo">
-                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo.svg">
+                    <img src="<?php  echo get_template_directory_uri() ?>/assets/build/images/logo-jk.svg">
                 </div>
             </div>
             <div class="footer-layout-bottom_item">
@@ -105,7 +116,7 @@
             </div>
             <div class="footer-layout-bottom_item">
                 <div class="footer-el">
-
+                    <a class="footer-phone" href="tel:+8 800 775 05 19">8 800 775 05 19</a>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@ get_header(); ?>
             <?php get_template_part( 'components/projects'); ?>
             <?php get_template_part( 'components/about'); ?>
         </div>
-
+        <?php get_template_part( 'components/content'); ?>
 
     </main>
 <?php get_footer(); ?>

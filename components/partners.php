@@ -25,26 +25,7 @@
                     <?php wp_reset_query(); ?>
                 
             </div>
-        
-            
             
         </div>
     </div>
-    
-    
 </div>
-<style>
-.partners {
-    overflow: hidden;
-        padding-top: 90px;
-        padding-bottom: 50px;
-}
-.partners-layout {
-        padding-top: 30px;
-}
-    .swiper-container-partners {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-</style>

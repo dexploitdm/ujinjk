@@ -6,11 +6,14 @@
                
             
             
-                    <?php $logosujinjk = new WP_Query(array('post_type' => 'logosujinjk', 'order' => 'ASC')) ?>
-                    <?php if ($logosujinjk->have_posts()): ?>
-                        <?php while ($logosujinjk->have_posts()) : $logosujinjk->the_post(); ?>
-                          
+                    <?php $smiujinjk = new WP_Query(array('post_type' => 'smiujinjk', 'order' => 'ASC')) ?>
+                    <?php if ($smiujinjk->have_posts()): ?>
+                        <?php while ($smiujinjk->have_posts()) : $smiujinjk->the_post(); ?>
+
                            <div class="swiper-slide">
+                               <div class="smi-title">
+                                   <a href="#"><?php the_title(); ?></a>
+                               </div>
                                <div class="partners-cover">
                                    <img src="<?php the_post_thumbnail_url(); ?>">
                                </div>
@@ -35,19 +38,5 @@
     </div>
 </div>
 <style>
-.logos {
-        overflow: hidden;
-            padding-bottom: 164px;
-}
-    .logos-action-box {
-        max-width: 75px;
-    position: relative;
-    margin-left: auto;
-}
 
-    .swiper-container-logos {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
 </style>
