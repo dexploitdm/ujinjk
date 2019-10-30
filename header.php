@@ -5,7 +5,7 @@
     <title><?php the_title() ?> | Ujin</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="author" content="Dexploitdm | Дмитрий Паршаков">
+    <meta name="author" content="Dexploitdm">
     <meta name="theme-color" content="#2D3C3E">
     <link href="<?php  echo get_template_directory_uri() ?>/assets/build/css/core.css" rel="stylesheet">
 	<script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.js"></script>

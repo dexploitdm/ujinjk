@@ -5,21 +5,51 @@
 и получите скидку</div>
 			     <div class="quiz-proccent">5%</div></div>
             <div class="quiz-btn">
-                <button type="button" class="jk-btn jk-btn-blue down">Пройти опрос и получить скидку</button>
+                <a href="#quizes" class="jk-btn jk-btn-orange check js-start-quiz">Пройти опрос и получить скидку</a>
             </div>
 		</div>
 		
 		 
-		
-		
-		<div class="quiz-answers" style="background-image: url(<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/bg_quiz.png)">
-		    <div class="quiz-answers-layout">
+		<div id="quiz-result" class="modal-manager mfp-hide">
+            <div class="modal-manager-layout">
+                <div class="quiz-result-text">
+                    <div class="result-title">Поздравляем!</div>
+                    <div class="result-text">Для получения вашей персональной скидки, укажите, пожалуйста,  
+                    ваш номер телефона и E-mail.
+                    Наш менеджер свяжется с вами в ближайшее время.</div>
+                </div>
+                <form class="manager-form">
+                    <div class="u-controls">
+                        <input type="text" class="u-input" name="fio" placeholder="Фамилия, Имя">
+                    </div>
+                    <div class="u-controls">
+                        <input type="text" class="u-input" name="phone" placeholder="Номер телефона">
+                    </div>
+                    <div class="u-controls">
+                        <input type="text" class="u-input" name="email" placeholder="Ваш E-mail">
+                    </div>
+                    <div class="manager-agree">
+                        Нажимая кнопку Отправить, вы принимаете <a href="#">условия соглашения</a>
+                    </div>
+                    <div class="manager-btn">
+                        <button type="submit" class="jk-btn jk-btn-neon call ">Отправить</button>
+                    </div>
+                </form>
+            </div>
+            <div class="msg-note msg-note-manager">Сообщение отправленно</div>
+        </div>
+        
+        <div id="quizes" class="modal-quiz mfp-hide">
+            <div class="modal-manager-layout">
+                <div class="quiz-answers-layout">
 		        <div class="title-answer"></div>
 		    </div>
+            </div>
+            <div class="msg-note msg-note-manager">Сообщение отправленно</div>
+        </div>
+		
+		<div class="quiz-answers" style="background-image: url(<?php  echo get_template_directory_uri() ?>/assets/build/images/covers/bg_quiz.png)">
 		    
-		    <div class="quiz-answers-relult">
-		        relult
-		    </div>
 		</div>
 		
 	</div>
@@ -28,35 +58,86 @@
 
 
 	<style>
+	.modal-quiz {
+	   background-color: #2D3C3E;
+	   box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.6);
+        border-radius: 40px;
+        box-sizing: border-box;
+        border-radius: 23px;
+        width: auto;
+        margin: auto;
+        max-width: 840px;
+
+    
+	}
+	.modal-quiz .mfp-close {
+	        top: 0;
+	}
 	
+	.modal-quiz .mfp-close:after {
+	   content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        right: 40px;
+        background-size: cover;
+        background-image: url("data:image/svg+xml,%3Csvg width='43' height='42' viewBox='0 0 43 42' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M41.6557 1L1.65574 41M41 41L1 1' stroke='white' stroke-width='2'/%3E%3C/svg%3E%0A");
+	}
+	 
+	
+	.jk-btn-orange {
+	    border: 1px solid #ff9500;
+        color: #2d3c3e;
+        padding: 12px 20px 12px 46px;
+        background: #FF9500;
+	}
+	.jk-btn.check:before {
+	   content: '';
+        position: absolute;
+        background-size: cover;
+        width: 23px;
+        height: 17px;
+        top: 14px;
+        left: 16px;
+	    background-image: url("data:image/svg+xml,%3Csvg width='30' height='25' viewBox='0 0 30 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 1.79009L11.9768 21.1127L3.00001 11.29' stroke='%232D3C3E' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+	}
 	.quiz-answers {
 	   background-size: cover;
         height: 100vh;
             position: relative;
 	}
 	.quiz-answers-layout {
-	    color: #fff;
+	   color: #fff;
+	}
+	.quiz-answers-relult {
+	   color: #fff;
         background: #2D3C3E;
         box-shadow: 0px 30px 50px rgba(0, 0, 0, 0.6);
         border-radius: 40px;
-        max-width: 846px;
+        max-width: 600px;
         margin: auto;
-        height: 481px;
+        height: 470px;
         position: absolute;
         left: 0;
         right: 0;
         bottom: 0;
         top: 0;
 	}
+	.a-relult-box {
+	   padding: 25px 60px 40px 60px;
+	}
 		.quiz  {
 		    background: #2D3C3E;
-			   padding: 50px 0;
-			        margin: 20px 0;
+			    
 		}
 		.quiz-layout {
-			     display: flex;
-    justify-content: space-between;
-        align-items: center;
+			display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 70px;
+            padding-bottom: 70px;
+		
 		}
 		.quiz-head {
 		    font-weight: 500;
@@ -73,10 +154,14 @@
 		}
 		.quiz-text {
 		        padding-right: 10px;
-
 		}
+		.quiz-btn .jk-btn {
+    	   font-size: 18px;
+            line-height: 100%;
+    	}
 	</style>
 	
+	<!--TODO: TEST-->
 	<style>
 	.testbox {
 		display: none;
@@ -153,8 +238,7 @@
 
 
 	<script>
-			
-			
+
   var questions = [
 	  <?php $quizes = new WP_Query(array('post_type' => 'quizes','showposts'=> '30', 'order' => 'ASC')) ?>
                 <?php if ($quizes->have_posts()): ?>
@@ -208,7 +292,9 @@ $('.quiz-next').click(function() {
 
 	if($(this).attr('data-next') === 'undefined'){
 	    $('.quiz-answers-layout').hide();
-	    $('.quiz-answers-relult').show();
+	    $.magnificPopup.open({
+            items: {src: '#quiz-result'}, type: 'inline'
+        });
 	}
 	nextAnswer.show();
 });
@@ -268,8 +354,13 @@ $('.quiz-next').click(function() {
 		}
 		.u-radio:checked + .ujin-label:before {
 /* 			background-color: #0EF5FF; */
-			content: url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='16' viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8' cy='8' r='4' fill='%234CAF50' fill-rule='evenodd'/%3E%3C/svg%3E");
+           content: '';
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='5' fill='%230EF5FF'/%3E%3C/svg%3E%0A");
+    	    background-repeat: no-repeat;
+            background-size: 10px 18px;
+            background-position: center;
 		}
+	
 		.u-radio:hover:not(:disabled) + .ujin-label:before {
 			border-color: #0EF5FF;
 		}

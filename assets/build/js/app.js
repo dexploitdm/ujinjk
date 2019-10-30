@@ -50,9 +50,10 @@ function activeLinkMenu(){
     if(getCookie('activeAnchor')){
          let oldLink = getCookie('activeAnchor');
          let newLink = window.location.href + '#' + oldLink
-         document.location.href = newLink;
+         if(!window.location.hash) {
+            document.location.href = newLink;
+         } 
     } 
-    
     
     jQuery(window).scroll(function(){
          var $sections = $('.anchor');
@@ -104,6 +105,7 @@ function openModals(){
         e5 = $('.e5'),
         jsInfoProject = $('.js-info-pro'),
         callManager = $('.js-form-manager'),
+        quizModal = $('.js-start-quiz'),
         closeEl = $('.close-el'),
         modalVideo = $('.js-demo-video');
     modalDemo.magnificPopup({
@@ -142,7 +144,12 @@ function openModals(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
-
+    quizModal.magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
+    
+    quizModal.click();
     closeEl.click(function() {
         $.magnificPopup.close();
     });

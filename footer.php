@@ -177,6 +177,7 @@
                 url: "<?php echo get_template_directory_uri() ?>/mail/mail.php",
                 data: str,
                 success: function(msg) {
+                    console.log(msg)
                     if(!msg == 'OK') {messageSendFooter.fadeIn();} else {messageSendFooter.fadeIn();}
                 }
             });
