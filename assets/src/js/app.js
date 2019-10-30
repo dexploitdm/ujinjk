@@ -1,25 +1,25 @@
 //Управкление coockie
 function setCookie(c_name,value,exdays)
 {
-   var exdate=new Date();
-   exdate.setDate(exdate.getDate() + exdays);
-   var c_value=escape(value) + ((exdays==null) ? "" : ("; expires="+exdate.toUTCString()));
-   document.cookie=c_name + "=" + c_value;
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate() + exdays);
+    var c_value=escape(value) + ((exdays==null) ? "" : ("; expires="+exdate.toUTCString()));
+    document.cookie=c_name + "=" + c_value;
 }
 
 function getCookie(c_name)
 {
-   var i,x,y,ARRcookies=document.cookie.split(";");
-   for (i=0; i<ARRcookies.length; i++)
-   {
-      x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-      y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-      x=x.replace(/^\s+|\s+$/g,"");
-      if (x==c_name)
-      {
-        return unescape(y);
-      }
-   }
+    var i,x,y,ARRcookies=document.cookie.split(";");
+    for (i=0; i<ARRcookies.length; i++)
+    {
+        x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+        y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+        x=x.replace(/^\s+|\s+$/g,"");
+        if (x==c_name)
+        {
+            return unescape(y);
+        }
+    }
 }
 function initHeader(){
     //header
@@ -48,29 +48,28 @@ function openMobileMenu() {
 
 function activeLinkMenu(){
     if(getCookie('activeAnchor')){
-         let oldLink = getCookie('activeAnchor');
-         let newLink = window.location.href + '#' + oldLink
-         if(!window.location.hash) {
+        let oldLink = getCookie('activeAnchor');
+        let newLink = window.location.href + '#' + oldLink
+        if(!window.location.hash) {
             document.location.href = newLink;
-         } 
-    } 
-    
-    jQuery(window).scroll(function(){
-         var $sections = $('.anchor');
-	$sections.each(function(i,el){
-        var top  = $(el).offset().top-100;
-        var bottom = top +$(el).height();
-        var scroll = $(window).scrollTop();
-        var id = $(el).attr('id');
-    	if( scroll > top && scroll < bottom){
-            $('a.active').removeClass('active');
-			$('a[href="#'+id+'"]').addClass('active');
-            setCookie('activeAnchor', id, '30')
         }
-    })
- });
-}
+    }
 
+    jQuery(window).scroll(function(){
+        var $sections = $('.anchor');
+        $sections.each(function(i,el){
+            var top  = $(el).offset().top-100;
+            var bottom = top +$(el).height();
+            var scroll = $(window).scrollTop();
+            var id = $(el).attr('id');
+            if( scroll > top && scroll < bottom){
+                $('a.active').removeClass('active');
+                $('a[href="#'+id+'"]').addClass('active');
+                setCookie('activeAnchor', id, '30')
+            }
+        })
+    });
+}
 function scrollFunny() {
     var linkNav = document.querySelectorAll('[href^="#"]'), //выбираем все ссылки к якорю на странице
         V = 0.2;  // скорость, может иметь дробное значение через точку (чем меньше значение - тем больше скорость)
@@ -149,6 +148,8 @@ function openModals(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
+
+    quizModal.click();
     closeEl.click(function() {
         $.magnificPopup.close();
     });
@@ -213,7 +214,7 @@ function initProjects() {
 
 function initAbouts() {
     mySwiperAbouts = new Swiper('.swiper-container-abouts', {
-		spaceBetween: 30,
+        spaceBetween: 30,
         pagination: {
             el: '.swiper-pagination',
         },
@@ -226,9 +227,9 @@ function initAbouts() {
 }
 function initPartners() {
     mySwiperPartners = new Swiper('.swiper-container-partners', {
-		slidesPerView: 2,
-      spaceBetween: 30,
-      freeMode: true,
+        slidesPerView: 2,
+        spaceBetween: 30,
+        freeMode: true,
         pagination: {
             el: '.swiper-pagination',
             type: 'fraction',
@@ -240,20 +241,20 @@ function initPartners() {
         },
         breakpoints: {
             320: {
-              slidesPerView: 2,
-              spaceBetween: 20,
+                slidesPerView: 2,
+                spaceBetween: 20,
             },
             640: {
-              slidesPerView: 3,
-              spaceBetween: 20,
+                slidesPerView: 3,
+                spaceBetween: 20,
             },
             968: {
-              slidesPerView: 4,
-              spaceBetween: 40,
+                slidesPerView: 4,
+                spaceBetween: 40,
             },
             1024: {
-              slidesPerView: 7,
-              spaceBetween: 50,
+                slidesPerView: 7,
+                spaceBetween: 50,
             },
         }
     });
@@ -261,25 +262,25 @@ function initPartners() {
 
 function initPartners() {
     mySwiperPartners = new Swiper('.swiper-container-partners', {
-		slidesPerView: 2,
-      spaceBetween: 30,
+        slidesPerView: 2,
+        spaceBetween: 30,
         freeMode: true,
         breakpoints: {
             320: {
-              slidesPerView: 2,
-              spaceBetween: 10,
+                slidesPerView: 2,
+                spaceBetween: 10,
             },
             640: {
-              slidesPerView: 3,
-              spaceBetween: 20,
+                slidesPerView: 3,
+                spaceBetween: 20,
             },
             968: {
-              slidesPerView: 4,
-              spaceBetween: 40,
+                slidesPerView: 4,
+                spaceBetween: 40,
             },
             1024: {
-              slidesPerView: 7,
-              spaceBetween: 50,
+                slidesPerView: 7,
+                spaceBetween: 50,
             },
         }
     });
@@ -287,9 +288,9 @@ function initPartners() {
 
 function initLogos() {
     mySwiperPartners = new Swiper('.swiper-container-logos', {
-		slidesPerView: 2,
-      spaceBetween: 30,
-      freeMode: true,
+        slidesPerView: 2,
+        spaceBetween: 30,
+        freeMode: true,
         pagination: {
             el: '.swiper-pagination',
             type: 'fraction',
@@ -301,16 +302,16 @@ function initLogos() {
         },
         breakpoints: {
             320: {
-              slidesPerView: 2,
-              spaceBetween: 20,
+                slidesPerView: 2,
+                spaceBetween: 20,
             },
             768: {
-              slidesPerView: 3,
-              spaceBetween: 40,
+                slidesPerView: 3,
+                spaceBetween: 40,
             },
             1024: {
-              slidesPerView: 4,
-              spaceBetween: 50,
+                slidesPerView: 4,
+                spaceBetween: 50,
             },
         }
     });
@@ -331,7 +332,7 @@ $( document ).ready(function() {
     openModals();
     productSlider();
     initProjects();
-	initAbouts();
-	initPartners();
-	initLogos();
+    initAbouts();
+    initPartners();
+    initLogos();
 });

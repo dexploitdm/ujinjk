@@ -234,6 +234,17 @@
 
 	}
 			</style>
+<?php $quizes = new WP_Query(array('post_type' => 'quizes','showposts'=> '30', 'order' => 'ASC')) ?>
+<?php if ($quizes->have_posts()): ?>
+    <?php while ($quizes->have_posts()) : $quizes->the_post(); ?>
+
+    <hr>
+        <?php the_title(); ?><br>
+        <?php echo get_field('current_answer_prev'); ?>
+    <hr>
+    <?php endwhile; ?>
+<?php endif; ?>
+<?php wp_reset_query(); ?>
 </div>
 
 
@@ -262,7 +273,7 @@
   for (let i = 0; i < questions.length; i++) { // выведет 0, затем 1, затем 2
 // 	  console.log(questions[i].question);
 // 	  console.log(questions[i].choices);
-	  
+	  console.log(questions[i].nextAnswer + " fd");
 	 //Вопросы
 	 titlebox.after('<div class="testbox answer' + i  + '" data-answer="' + questions[i].nextAnswer + '"><div class="testbox-layout"><div class="testbox-head"><div class="testbox-count">Вопрос №</div><div class="textbox-discount">Ваша скидка<span class="js-discount"></span></div></div><div class="testbox-flex"><div class="testbox-block"><div class="testbox-title">' + questions[i].question + '</div><div class="textbox-choices"></div></div><div class="testbox-cover"><img src="' + questions[i].img + '"></div></div><div class="testbox-btn"><button type="button" class="quiz-prev"></button><button type="button" class="quiz-next not" disabled></button></div></div></div>')
 	  
