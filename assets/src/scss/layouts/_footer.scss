@@ -75,6 +75,10 @@ footer {
       .links-soc {
         display: flex;
         padding-left: 80px;
+        &-insta {
+          margin-top: -5px;
+          margin-right: 18px;
+        }
         a {
           font-weight: 500;
           font-size: 24px;

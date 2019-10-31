@@ -238,7 +238,10 @@
   }
 }
 @media (max-width: $mobile-media) {
-  .testbox {
+  .quiz {
+    display: none;
+  }
+    .testbox {
     overflow: auto;
     &::-webkit-scrollbar {
       width: 4px;

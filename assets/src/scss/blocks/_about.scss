@@ -117,6 +117,7 @@
     .service-item {
       min-height: 312px;
       position: relative;
+      transition: .3s;
       &:before {
         content: '';
         position: absolute;
@@ -139,6 +140,9 @@
         height: 70px;
         top: -10px;
         left: -10px;
+      }
+      &:hover {
+        box-shadow: 0 0 6px $color-default;
       }
       .service-icon {
         position: absolute;

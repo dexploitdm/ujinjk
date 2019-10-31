@@ -139,6 +139,7 @@
         width: 100%;
         border: 1px solid $color-default;
         background-color: transparent;
+        box-sizing: border-box;
         &::placeholder {
           color: $color-default;
           opacity: 1;
@@ -180,7 +181,10 @@
         padding: 12px 20px 12px 40px;
       }
     }
-
-
+  }
+}
+@media (max-width: $mobile-media) {
+  .modal-manager {
+    margin: 0 10px;
   }
 }

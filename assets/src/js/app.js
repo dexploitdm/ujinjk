@@ -110,7 +110,7 @@ function openModals(){
         closeEl = $('.close-el'),
         orderCall = $('.js-order-call'),
         modalVideo = $('.js-demo-video');
-        
+
     modalDemo.magnificPopup({
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
@@ -155,7 +155,7 @@ function openModals(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
-    
+
     orderCall.magnificPopup({
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
@@ -329,16 +329,16 @@ function initLogos() {
 }
 
 function validateContact () {
-    
+
     const emailInput = $('.js-email'),
-     nameInput = $('.js-name'),
-     msgInput = $('.js-msg'),
-     bntSubmit = $('.js-submit');
-		  
+        nameInput = $('.js-name'),
+        msgInput = $('.js-msg'),
+        bntSubmit = $('.js-submit');
+
     const fio = $('.js-fio'),
-	telephone = $('.js-telephone'),
-	emailsend = $('.js-emailsend'),
-	bntSubmitFormes = $('.js-submit-formes');
+        telephone = $('.js-telephone'),
+        emailsend = $('.js-emailsend'),
+        bntSubmitFormes = $('.js-submit-formes');
 
     function valid(){
         if(emailInput.val().length > 0 && nameInput.val().length > 0){
@@ -355,9 +355,9 @@ function validateContact () {
                 nameInput.addClass('error');
             }
         }
-        
+
     }
-	function validOtherForm(){
+    function validOtherForm(){
         if($('.js-fio').val().length > 0 && $('.js-telephone').val().length > 0){
             bntSubmitFormes.removeAttr('disabled');
         } else {
@@ -374,7 +374,7 @@ function validateContact () {
             }
         }
     }
-    
+
     //Поля footer форм
     emailInput.focusout(function() {
         valid();
@@ -391,18 +391,18 @@ function validateContact () {
             emailInput.addClass('error');
         }
     });
-     emailInput.on('input', function() {
+    emailInput.on('input', function() {
         valid();
     });
-     nameInput.on('input', function() {
+    nameInput.on('input', function() {
         valid();
     });
     msgInput.on('input', function() {
         valid();
     });
-    
-    
-    
+
+
+
     //Поля остальных форм
     fio.focusout(function() {
         validOtherForm();
@@ -419,16 +419,16 @@ function validateContact () {
             fio.addClass('error');
         }
     });
-     fio.on('input', function() {
+    fio.on('input', function() {
         validOtherForm();
     });
-     telephone.on('input', function() {
+    telephone.on('input', function() {
         validOtherForm();
     });
     emailsend.on('input', function() {
         validOtherForm();
     });
-   
+
 }
 
 
