@@ -1,3 +1,8 @@
+<style>
+    .u-input.error {
+        border: 1px solid #ff4f4f !important;
+    }
+</style>
 <footer id="contact-anchor" class="anchor">
     <div class="breadcrumbs">
             <ul>
@@ -125,23 +130,48 @@
 <div id="manager" class="modal-manager mfp-hide">
     <div class="modal-manager-layout">
         <div class="manager-title">
-            Введите ваш номер теелфона и E-mail для отправки расчета
+            Введите ваш номер телефона и E-mail для отправки расчета
         </div>
         <form class="manager-form">
             <div class="u-controls">
-                <input type="text" class="u-input" name="fio" placeholder="Фамилия, Имя">
+                <input type="text" class="u-input js-fio" name="fio" placeholder="Фамилия, Имя">
             </div>
             <div class="u-controls">
-                <input type="text" class="u-input" name="phone" placeholder="Номер телефона">
+                <input type="text" class="u-input js-telephone" name="phone" placeholder="Номер телефона">
             </div>
             <div class="u-controls">
-                <input type="text" class="u-input" name="email" placeholder="Ваш E-mail">
+                <input type="text" class="u-input js-emailsend" name="email" placeholder="Ваш E-mail">
             </div>
             <div class="manager-agree">
                 Нажимая кнопку Отправить, вы принимаете <a href="#">условия соглашения</a>
             </div>
             <div class="manager-btn">
-                <button type="submit" class="jk-btn jk-btn-neon call ">Отправить</button>
+                <button type="submit" class="jk-btn jk-btn-neon call js-submit-formes" disabled >Отправить</button>
+            </div>
+        </form>
+    </div>
+    <div class="msg-note msg-note-manager">Сообщение отправленно</div>
+</div>
+<div id="ordercall" class="modal-manager mfp-hide">
+    <div class="modal-manager-layout">
+        <div class="manager-title">
+            Введите ваш номер телефона и E-mail
+        </div>
+        <form class="manager-form">
+             <div class="u-controls">
+                <input type="text" class="u-input js-fio" name="fio" placeholder="Фамилия, Имя">
+            </div>
+            <div class="u-controls">
+                <input type="text" class="u-input js-telephone" name="phone" placeholder="Номер телефона">
+            </div>
+            <div class="u-controls">
+                <input type="text" class="u-input js-emailsend" name="email" placeholder="Ваш E-mail">
+            </div>
+            <div class="manager-agree">
+                Нажимая кнопку Отправить, вы принимаете <a href="#">условия соглашения</a>
+            </div>
+            <div class="manager-btn">
+                <button type="submit" class="jk-btn jk-btn-neon call js-submit-formes" disabled >Отправить</button>
             </div>
         </form>
     </div>

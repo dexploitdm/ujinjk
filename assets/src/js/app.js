@@ -108,7 +108,9 @@ function openModals(){
         quizModal = $('.js-start-quiz'),
         quizModalResult = $('.js-quiz-result'),
         closeEl = $('.close-el'),
+        orderCall = $('.js-order-call'),
         modalVideo = $('.js-demo-video');
+        
     modalDemo.magnificPopup({
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
@@ -153,7 +155,11 @@ function openModals(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
-
+    
+    orderCall.magnificPopup({
+        type:'inline',
+        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+    });
 
     closeEl.click(function() {
         $.magnificPopup.close();
@@ -322,6 +328,110 @@ function initLogos() {
     });
 }
 
+function validateContact () {
+    
+    const emailInput = $('.js-email'),
+     nameInput = $('.js-name'),
+     msgInput = $('.js-msg'),
+     bntSubmit = $('.js-submit');
+		  
+    const fio = $('.js-fio'),
+	telephone = $('.js-telephone'),
+	emailsend = $('.js-emailsend'),
+	bntSubmitFormes = $('.js-submit-formes');
+
+    function valid(){
+        if(emailInput.val().length > 0 && nameInput.val().length > 0){
+            bntSubmit.removeAttr('disabled');
+        } else {
+            if(emailInput.val().length === 0) {
+                emailInput.addClass('error');
+            } else {
+                emailInput.removeClass('error');
+            }
+            if(nameInput.val().length > 0) {
+                nameInput.removeClass('error');
+            } else {
+                nameInput.addClass('error');
+            }
+        }
+        
+    }
+	function validOtherForm(){
+        if($('.js-fio').val().length > 0 && $('.js-telephone').val().length > 0){
+            bntSubmitFormes.removeAttr('disabled');
+        } else {
+            if($('.js-fio').val().length === 0) {
+                console.log('fio' + fio)
+                fio.addClass('error');
+            } else {
+                fio.removeClass('error');
+            }
+            if($('.js-telephone').val().length > 0) {
+                telephone.removeClass('error');
+            } else {
+                telephone.addClass('error');
+            }
+        }
+    }
+    
+    //Поля footer форм
+    emailInput.focusout(function() {
+        valid();
+        if($('.js-email').val().length > 0) {
+            emailInput.removeClass('error');
+        }
+    });
+    nameInput.focusout(function() {
+        valid();
+        if(nameInput.val().length > 0) {
+            nameInput.removeClass('error');
+        }
+        if(emailInput.val().length === 0) {
+            emailInput.addClass('error');
+        }
+    });
+     emailInput.on('input', function() {
+        valid();
+    });
+     nameInput.on('input', function() {
+        valid();
+    });
+    msgInput.on('input', function() {
+        valid();
+    });
+    
+    
+    
+    //Поля остальных форм
+    fio.focusout(function() {
+        validOtherForm();
+        if($('.js-fio').val().length > 0) {
+            fio.removeClass('error');
+        }
+    });
+    telephone.focusout(function() {
+        validOtherForm();
+        if($('.js-telephone').val().length > 0) {
+            telephone.removeClass('error');
+        }
+        if($('.js-fio').val().length === 0) {
+            fio.addClass('error');
+        }
+    });
+     fio.on('input', function() {
+        validOtherForm();
+    });
+     telephone.on('input', function() {
+        validOtherForm();
+    });
+    emailsend.on('input', function() {
+        validOtherForm();
+    });
+   
+}
+
+
 $(window).on('resize', function(){
     //initSolutions();
 });
@@ -340,4 +450,5 @@ $( document ).ready(function() {
     initAbouts();
     initPartners();
     initLogos();
+    validateContact();
 });

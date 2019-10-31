@@ -30,10 +30,10 @@
         </div>
         <div class="call">
             <div class="call-set">
-                <a href="http://localhost:3000/#" class="call-link">Заказать звонок</a>
+                <a href="#ordercall" class="call-link js-order-call">Заказать звонок</a>
             </div>
             <div class="call-phone">
-                <a href="http://localhost:3000/#">8 800 775 05 19</a>
+                <a href="tel:8 800 775 05 19">8 800 775 05 19</a>
             </div>
         </div>
         <div class="drawer-btn js-open-menu">

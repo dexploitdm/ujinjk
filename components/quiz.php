@@ -6,7 +6,8 @@
 			     <div class="quiz-proccent">5%</div></div>
             <div class="quiz-btn">
                 <a href="#quizes" class="jk-btn jk-btn-orange check js-start-quiz">Пройти опрос и получить скидку</a>
-                <a href="#quiz-result" class="hidden js-quiz-result">44</a>
+                <a href="#quiz-result" class="hidden js-quiz-result"></a>
+
             </div>
 		</div>
 		
@@ -20,20 +21,20 @@
                     Наш менеджер свяжется с вами в ближайшее время.</div>
                 </div>
                 <form class="manager-form">
-                    <div class="u-controls">
-                        <input type="text" class="u-input" name="fio" placeholder="Фамилия, Имя">
+                     <div class="u-controls">
+                        <input type="text" class="u-input js-fio" name="fio" placeholder="Фамилия, Имя">
                     </div>
                     <div class="u-controls">
-                        <input type="text" class="u-input" name="phone" placeholder="Номер телефона">
+                        <input type="text" class="u-input js-telephone" name="phone" placeholder="Номер телефона">
                     </div>
                     <div class="u-controls">
-                        <input type="text" class="u-input" name="email" placeholder="Ваш E-mail">
+                        <input type="text" class="u-input js-emailsend" name="email" placeholder="Ваш E-mail">
                     </div>
                     <div class="manager-agree">
                         Нажимая кнопку Отправить, вы принимаете <a href="#">условия соглашения</a>
                     </div>
                     <div class="manager-btn">
-                        <button type="submit" class="jk-btn jk-btn-neon call" disabled>Отправить</button>
+                        <button type="submit" class="jk-btn jk-btn-neon call js-submit-formes" disabled >Отправить</button>
                     </div>
                 </form>
             </div>
@@ -53,6 +54,19 @@
 
 
 	<script>
+
+$( document ).ready(function() {
+
+    
+    
+    // $.magnificPopup.open({
+    //     items: {
+    //         src: '#quiz-result' 
+    //     },
+    //     type: 'inline'
+    // });
+})
+
 
   var questions = [
 	  <?php $quizes = new WP_Query(array('post_type' => 'quizes','showposts'=> '30', 'order' => 'ASC')) ?>
@@ -83,7 +97,8 @@
 	  
 	  for (let t = 0; t < questions[i].choices.length; t++) {
 		  //console.log(t)
-		  $('.answer' + i).children().children().children().children('.textbox-choices').append('<div class="choice" data-ident="' + questions[i].identChoices[t] + '"><input type="radio" id="'+ questions[i].choices[t].substring(0, 3) +  questions[i].id +  '" name="choices' + questions[i].id + '" value="" class="u-radio"><label for="'+ questions[i].choices[t].substring(0, 3) +  questions[i].id +  '" class="ujin-label">' + questions[i].choices[t] + '</label></div>')
+		  let identChoces = questions[i].id + randomInteger(1, 99);
+		  $('.answer' + i).children().children().children().children('.textbox-choices').append('<div class="choice" data-ident="' + questions[i].identChoices[t] + '"><input type="radio" id="'+ questions[i].choices[t].substring(0, 3) +  identChoces +  '" name="choices' + questions[i].id + '" value="" class="u-radio"><label for="'+ questions[i].choices[t].substring(0, 3) +  identChoces +  '" class="ujin-label">' + questions[i].choices[t] + '</label></div>')
 		  //console.log(questions[i].choices[t])
 	  }
 	  
@@ -111,10 +126,10 @@ $('.quiz-next').click(function() {
 
 	if($(this).attr('data-next') === 'undefined'){
 	    $('.quiz-answers-layout').hide();
-	    $.magnificPopup.open({
-            items: {src: '#quiz-result'}, type: 'inline'
-        });
+        $('.js-quiz-result').click();
+        $('.js-state-result').focus();
         $('.quiz-answers-layout').attr('data-state','close');
+      
 	}
     currentAnswerNumber = currentAnswerNumber + 1;
     answerNumber.text(currentAnswerNumber);
@@ -144,4 +159,9 @@ $('.quiz-next').click(function() {
       var n = words.split(" ");
       return n[n.length - 1];
   }
+  function randomInteger(min, max) {
+      // получить случайное число от (min-0.5) до (max+0.5)
+      let rand = min - 0.5 + Math.random() * (max - min + 1);
+      return Math.round(rand);
+    }
 </script>
