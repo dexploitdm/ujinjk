@@ -186,5 +186,12 @@
 @media (max-width: $mobile-media) {
   .modal-manager {
     margin: 0 10px;
+    .mfp-close {
+      position: absolute;
+      margin-top: -50px;
+      &:before {
+        right: 11px;
+      }
+    }
   }
 }

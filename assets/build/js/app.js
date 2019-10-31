@@ -106,7 +106,6 @@ function openModals(){
         jsInfoProject = $('.js-info-pro'),
         callManager = $('.js-form-manager'),
         quizModal = $('.js-start-quiz'),
-        quizModalResult = $('.js-quiz-result'),
         closeEl = $('.close-el'),
         orderCall = $('.js-order-call'),
         modalVideo = $('.js-demo-video');
@@ -151,11 +150,6 @@ function openModals(){
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
     });
-    quizModalResult.magnificPopup({
-        type:'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
-    });
-
     orderCall.magnificPopup({
         type:'inline',
         midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.

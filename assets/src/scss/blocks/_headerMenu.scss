@@ -44,4 +44,8 @@
     color: $color-white;
   }
 }
-
+@media (max-width: $mobile-media) {
+  .u-menu-list-item a.active {
+    padding-bottom: 6px;
+  }
+}

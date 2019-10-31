@@ -733,6 +733,10 @@ footer {
 .header-bg .u-menu-list-item a {
   color: #fff; }
 
+@media (max-width: 768px) {
+  .u-menu-list-item a.active {
+    padding-bottom: 6px; } }
+
 .head-box {
   background-size: cover;
   min-height: 800px;
@@ -1451,7 +1455,12 @@ footer {
 
 @media (max-width: 768px) {
   .modal-manager {
-    margin: 0 10px; } }
+    margin: 0 10px; }
+    .modal-manager .mfp-close {
+      position: absolute;
+      margin-top: -50px; }
+      .modal-manager .mfp-close:before {
+        right: 11px; } }
 
 .product {
   padding-top: 20px;

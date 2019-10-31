@@ -6,8 +6,6 @@
 			     <div class="quiz-proccent">5%</div></div>
             <div class="quiz-btn">
                 <a href="#quizes" class="jk-btn jk-btn-orange check js-start-quiz">Пройти опрос и получить скидку</a>
-                <a href="#quiz-result" class="hidden js-quiz-result"></a>
-
             </div>
 		</div>
 		
@@ -42,11 +40,38 @@
         </div>
         
         <div id="quizes" class="modal-quiz mfp-hide">
-            <div class="modal-manager-layout">
+            <div class="modal-manager-layout js-quiz-layout">
                 <div class="quiz-answers-layout" data-state="open">
-		        <div class="title-answer"></div>
-		    </div>
+		            <div class="title-answer"></div>
+		        </div>
             </div>
+            <div class="modal-manager-layout js-result-layout" style="display: none">
+                <div class="quiz-result-text">
+                    <div class="result-title">Поздравляем!</div>
+                    <div class="result-text">Для получения вашей персональной скидки, укажите, пожалуйста,
+                        ваш номер телефона и E-mail.
+                        Наш менеджер свяжется с вами в ближайшее время.</div>
+                </div>
+                <form class="manager-form">
+                    <div class="u-controls">
+                        <input type="text" class="u-input js-fio" name="fio" placeholder="Фамилия, Имя">
+                    </div>
+                    <div class="u-controls">
+                        <input type="text" class="u-input js-telephone" name="phone" placeholder="Номер телефона">
+                    </div>
+                    <div class="u-controls">
+                        <input type="text" class="u-input js-emailsend" name="email" placeholder="Ваш E-mail">
+                    </div>
+                    <div class="manager-agree">
+                        Нажимая кнопку Отправить, вы принимаете <a href="#">условия соглашения</a>
+                    </div>
+                    <div class="manager-btn">
+                        <button type="submit" class="jk-btn jk-btn-neon call js-submit-formes" disabled >Отправить</button>
+                    </div>
+                </form>
+            </div>
+            <div class="msg-note msg-note-manager">Сообщение отправленно</div>
+
         </div>
 
 		
@@ -55,17 +80,6 @@
 
 	<script>
 
-$( document ).ready(function() {
-
-    
-    
-    // $.magnificPopup.open({
-    //     items: {
-    //         src: '#quiz-result' 
-    //     },
-    //     type: 'inline'
-    // });
-})
 
 
   var questions = [
@@ -108,6 +122,7 @@ $( document ).ready(function() {
     let currentAnswerNumber = 1;
     let prevAnswer = '';
     const answerNumber = $('.js-number');
+    const quizBox = $('#quizes');
     answerNumber.text(currentAnswerNumber);
 
 
@@ -125,11 +140,12 @@ $('.quiz-next').click(function() {
 	let nextAnswer = $('[data-answer="'+ $(this).attr('data-next') +'"]');
 
 	if($(this).attr('data-next') === 'undefined'){
-	    $('.quiz-answers-layout').hide();
-        $('.js-quiz-result').click();
-        $('.js-state-result').focus();
+	    $('.js-quiz-layout').hide();
+	    $('.js-result-layout').show();
         $('.quiz-answers-layout').attr('data-state','close');
-      
+        quizBox.removeClass('modal-quiz');
+        quizBox.addClass('modal-manager');
+        quizBox.addClass('modal-quiz-result');
 	}
     currentAnswerNumber = currentAnswerNumber + 1;
     answerNumber.text(currentAnswerNumber);
@@ -148,9 +164,13 @@ $('.quiz-next').click(function() {
   $('.js-start-quiz').click(function() {
       let currentQuizState = $('.quiz-answers-layout');
       if(currentQuizState.attr('data-state') === 'close'){
+          quizBox.addClass('modal-quiz');
+          quizBox.removeClass('modal-manager');
+          quizBox.removeClass('modal-quiz-result');
+          $('.js-result-layout').hide();
           currentAnswerNumber = 1;
           answerNumber.text(currentAnswerNumber);
-          $('.quiz-answers-layout').show();
+          $('.js-quiz-layout').show();
           $('.answer0').show();
           currentQuizState.attr('data-state', 'open');
       }
