@@ -17,9 +17,8 @@
     top: 130px;
     right: 0;
     width: 67%;
-    min-height: 834px;
-    @media (max-width: $tablet-media){
-      min-height: 100%;
+    @media (min-width: 768px){
+        bottom: 38px;
     }
   }
   &-head {

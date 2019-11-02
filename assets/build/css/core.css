@@ -1786,8 +1786,12 @@ footer {
     background-color: #2D3C3E;
     top: 130px;
     right: 0;
-    width: 67%;
-    min-height: 834px; }
+    width: 67%; }
+    @media (min-width: 768px){
+          .projects-slider:before {
+              bottom: 38px;
+          }
+    }
     @media (max-width: 968px) {
       .projects-slider:before {
         min-height: 100%; } }
