@@ -48,7 +48,7 @@
             <div class="modal-manager-layout js-result-layout" style="display: none">
                 <div class="quiz-result-text">
                     <div class="result-title">Поздравляем!</div>
-                    <div class="result-text">Для получения вашей персональной скидки, укажите, пожалуйста,
+                    <div class="result-text">Для получения вашей персональной скидки, укажите, пожалуйста
                         ваш номер телефона и E-mail.
                         Наш менеджер свяжется с вами в ближайшее время.</div>
                 </div>

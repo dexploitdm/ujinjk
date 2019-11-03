@@ -4,14 +4,6 @@
     }
 </style>
 <footer id="contact-anchor" class="anchor">
-    <div class="breadcrumbs">
-            <ul>
-                <li><a href="#product-anchor">О продукте</a> </li>
-                <li><a href="#project-anchor">Наши проекты</a> </li>
-                <li><a href="#about-anchor">О нас</a> </li>
-                <li><a class="active" href="#contact-anchor">Контакты</a> </li>
-            </ul>
-        </div>
     <div class="footer-layout box">
         <h2 class="title-h2">Контакты</h2>
         <div class="footer-layout-box" >
@@ -52,7 +44,7 @@
                 <div class="footer-form">
                     <div class="footer-form-layout">
                         <div class="footer-form-desc">
-                            Свяжитесь с нами, и мы подберем для вам наиболее подходящее предложение
+                            Свяжитесь с нами, и мы подберем для Вас наиболее подходящее предложение
                         </div>
                         <form id="contact" method="post">
                             <div class="u-controls">
@@ -130,7 +122,7 @@
 <div id="manager" class="modal-manager mfp-hide">
     <div class="modal-manager-layout">
         <div class="manager-title">
-            Введите ваш номер телефона и E-mail для отправки расчета
+            Введите ваш номер телефона и E-mail для отправки и наш менеджер свяжется с вами
         </div>
         <form class="manager-form">
             <div class="u-controls">
@@ -181,18 +173,19 @@
 
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/swiper.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/jquery.magnific-popup.js"></script>
+<script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/vendor/owl.carousel.min.js"></script>
 <script src="<?php  echo get_template_directory_uri() ?>/assets/build/js/app.js"></script>
 <script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'fraction',
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
+    // var swiper = new Swiper('.swiper-container', {
+    //     pagination: {
+    //         el: '.swiper-pagination',
+    //         type: 'fraction',
+    //     },
+    //     navigation: {
+    //         nextEl: '.swiper-button-next',
+    //         prevEl: '.swiper-button-prev',
+    //     },
+    // });
     jQuery(document).ready(function($) {
     const formSend = $("#contact");
 	const formSendManager = $("#manager");

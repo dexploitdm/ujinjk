@@ -14,6 +14,27 @@
     margin: 0 30px;
   }
 }
+.partners {
+  .partners-layout {
+    .partners-cover {
+      text-align: center;
+      img {
+        filter: grayscale(100%);
+        filter: gray; /* IE 6-9 */
+      }
+      &:hover {
+        img {
+          filter: inherit;
+        }
+      }
+    }
+  }
+
+
+}
+.partners-boxes {
+  align-items: center;
+}
 .smi {
   padding-bottom: 50px;
   &-item {
@@ -106,6 +127,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  margin-left: -50px;
 }
 @media (max-width: $mobile-media) {
   .logos {

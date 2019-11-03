@@ -20,6 +20,9 @@
     @media (min-width: 768px){
         bottom: 38px;
     }
+    @media (max-width: 968px) {
+      min-height: 100%;
+    }
   }
   &-head {
     display: flex;

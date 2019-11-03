@@ -1,28 +1,27 @@
 <div class="product anchor" id="product-anchor">
-    <?php get_template_part('components/menu'); ?>
     <div class="product-head box">
         <h2 class="title-h2">О продукте</h2>
-        <div class="arrows">
+        <div class="car-btn">
 
             <!-- Add Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <button class="car-next pr-one-next"></button>
+            <button class="car-prev pr-one-prev"></button>
         </div>
     </div>
 
     <div class="product-layout box">
 
 
-        <div class="swiper-container6">
+        <div class="product-owl-box">
             <div class="title-slider title-slider_r">
                 Наши возможности
             </div>
-            <div class="swiper-wrapper">
+            <div class="owl-carousel product-one owl-theme">
 
                 <?php $opportunities = new WP_Query(array('post_type' => 'opportunities', 'order' => 'ASC')) ?>
                 <?php if ($opportunities->have_posts()): ?>
                     <?php while ($opportunities->have_posts()) : $opportunities->the_post(); ?>
-                        <div class="swiper-slide slider-item">
+                        <div class="slider-item">
                             <div class="slider-item-layout">
                                 <div class="product-icon">
                                     <img src="<?php the_post_thumbnail_url(); ?>">
@@ -38,17 +37,18 @@
                 <?php endif; ?>
                 <?php wp_reset_query(); ?>
             </div>
+
         </div>
-        <div class="swiper-container7">
+        <div class="product-owl-box">
             <div class="title-slider title-slider_l">
                 Ваши преимущества
             </div>
-            <div class="swiper-wrapper">
+            <div class="owl-carousel product-one owl-theme">
 
                 <?php $advantage = new WP_Query(array('post_type' => 'product-advantage', 'order' => 'ASC')) ?>
                 <?php if ($advantage->have_posts()): ?>
                     <?php while ($advantage->have_posts()) : $advantage->the_post(); ?>
-                        <div class="swiper-slide slider-item">
+                        <div class="slider-item">
                             <div class="slider-item-layout">
                                 <div class="product-icon">
                                     <img src="<?php the_post_thumbnail_url(); ?>">
@@ -63,8 +63,6 @@
                     <?php endwhile; ?>
                 <?php endif; ?>
                 <?php wp_reset_query(); ?>
-
-
             </div>
 
         </div>

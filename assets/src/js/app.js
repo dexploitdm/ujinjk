@@ -144,7 +144,18 @@ function openModals(){
     });
     callManager.magnificPopup({
         type:'inline',
-        midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        midClick: true, // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+        callbacks: {
+            close: function(){
+
+                function positionQuiz() {
+                    let elPosition = $('.quiz').position().top - 100;
+                    document.body.scrollTop = elPosition;
+                    document.documentElement.scrollTop = elPosition;
+                }
+                setTimeout(positionQuiz, 500);
+            }
+        }
     });
     quizModal.magnificPopup({
         type:'inline',
@@ -161,45 +172,48 @@ function openModals(){
 
 }
 
+
 function productSlider(){
-    mySwiperProduct = new Swiper('.swiper-container6', {
-        slidesPerView: 1,
-        spaceBetween: 100,
-        slideToClickedSlide: false,
-        //loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 1,
-                spaceBetween: 40,
+    $('.product-one').owlCarousel({
+        loop:false,
+        margin:10,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+
             },
-            968: {
-                slidesPerView: 3,
-                spaceBetween: 50,
+            968:{
+                items:3,
+                nav: true
             },
         }
     });
-    mySwiperProduct7 = new Swiper('.swiper-container7', {
-        slidesPerView: 1,
-        spaceBetween: 100,
-        slideToClickedSlide: false,
-        //loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 1,
-                spaceBetween: 40,
-            },
-            968: {
-                slidesPerView: 3,
-                spaceBetween: 50,
-            },
+    //Custom Carousel actions
+    const prOneNext = $('.pr-one-next');
+    const prOnePrev = $('.pr-one-prev');
+    prOneNext.click(function() {
+        let productCarOneNext = $('.product-one .owl-next');
+        let productCarOnePrev = $('.product-one .owl-prev');
+        productCarOneNext.click();
+
+        if(productCarOneNext.hasClass('disabled')){
+            prOneNext.addClass('disabled');
+        }
+        if(!productCarOnePrev.hasClass('disabled')){
+            prOnePrev.removeClass('disabled');
+        }
+    });
+    prOnePrev.click(function() {
+        let productCarOnePrev = $('.product-one .owl-prev');
+        let productCarOneNext = $('.product-one .owl-next');
+        productCarOnePrev.click();
+
+        if(productCarOnePrev.hasClass('disabled')){
+            prOnePrev.addClass('disabled');
+        }
+        if(!productCarOneNext.hasClass('disabled')){
+            prOneNext.removeClass('disabled');
         }
     });
 }
@@ -230,45 +244,12 @@ function initAbouts() {
         },
     });
 }
-function initPartners() {
-    mySwiperPartners = new Swiper('.swiper-container-partners', {
-        slidesPerView: 2,
-        spaceBetween: 30,
-        freeMode: true,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'fraction',
-        },
-        //loop: true,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-            640: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-            },
-            968: {
-                slidesPerView: 4,
-                spaceBetween: 40,
-            },
-            1024: {
-                slidesPerView: 7,
-                spaceBetween: 50,
-            },
-        }
-    });
-}
+
 
 function initPartners() {
     mySwiperPartners = new Swiper('.swiper-container-partners', {
         slidesPerView: 2,
-        spaceBetween: 30,
+        //spaceBetween: 30,
         freeMode: true,
         breakpoints: {
             320: {
@@ -285,7 +266,7 @@ function initPartners() {
             },
             1024: {
                 slidesPerView: 7,
-                spaceBetween: 50,
+                //spaceBetween: 50,
             },
         }
     });

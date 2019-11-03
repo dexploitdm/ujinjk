@@ -8,6 +8,23 @@
   @media (max-width: $mobile-media) {
     background-image: url(../images/covers/bg-home.png) !important;
   }
+  .jk-btn {
+    &.play {
+      padding-left: 52px;
+      &:before {
+        left: 25px;
+        top: 11px;
+      }
+    }
+    &.down {
+      padding-left: 45px;
+      &:before {
+        top: 11px;
+        left: 19px;
+      }
+    }
+
+  }
 }
 
 .head-box-web {
@@ -130,9 +147,21 @@
 
   }
   &-icon {
-    height: 64px;
+    height: 53px;
+    position: relative;
+    margin-bottom: -15px;
     img {
-      max-width: 76px;
+      max-height: 54px;
+    }
+    @media (max-width: $mobile-media) {
+      margin-bottom: 0;
+      width: 70px;
+      img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
     }
   }
   &-label {
@@ -140,7 +169,7 @@
     font-size: 30px;
     line-height: 100%;
     color: $color-default;
-    max-width: 235px;
+    max-width: 200px;
   }
   &-number {
     font-weight: bold;
@@ -155,7 +184,7 @@
     font-size: 18px;
     line-height: 120%;
     color: $color-white;
-    max-width: 272px;
+    max-width: 260px;
   }
 }
 
@@ -317,12 +346,14 @@
       padding: 12px 9px 12px 20px;
       text-align: center;
       &.down {
+        padding-left: 28px;
         &:before {
           left: 13px;
           top: 10px;
         }
       }
       &.play {
+        padding-left: 22px;
         &:before {
           left: 28px;
           top: 11px;

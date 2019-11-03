@@ -6,7 +6,7 @@
     
     <div class="partners-layout">
         <div class="swiper-container-partners">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper partners-boxes">
               
                
             
@@ -14,16 +14,16 @@
                     <?php $partners = new WP_Query(array('post_type' => 'partners', 'order' => 'ASC')) ?>
                     <?php if ($partners->have_posts()): ?>
                         <?php while ($partners->have_posts()) : $partners->the_post(); ?>
-                          
+
                            <div class="swiper-slide">
-                               <div class="partners-cover">
+                               <div class="partners-cover cover<?php the_ID(); ?>">
                                    <img src="<?php the_post_thumbnail_url(); ?>">
                                </div>
                            </div>
                         <?php endwhile; ?>
                     <?php endif; ?>
                     <?php wp_reset_query(); ?>
-                
+
             </div>
             
         </div>
