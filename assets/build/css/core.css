@@ -1880,7 +1880,7 @@ footer {
     width: 67%; }
     @media (min-width: 768px) {
       .projects-slider:before {
-        bottom: 38px; } }
+        bottom: 66px; } }
     @media (max-width: 968px) {
       .projects-slider:before {
         min-height: 100%; } }
@@ -2701,7 +2701,10 @@ footer {
   max-width: 138px;
   max-height: 138px;
   margin: auto; }
-
+.ourteam-cover img {
+    max-width: 138px;
+    border-radius: 50%;
+}
 .ourteam-name {
   padding-top: 24px;
   font-weight: normal;
