@@ -978,7 +978,9 @@ footer {
     .head-box-layout .head-box-desc .title-h1 p {
       padding-bottom: 2px; }
       .head-box-layout .head-box-desc .title-h1 p:nth-child(2) {
-        max-width: 214px; }
+        max-width: 205px; }
+      .head-box-layout .head-box-desc .title-h1 p:last-child {
+        max-width: 205px; }
   .head-box-container {
     padding-top: 20px; }
   .head-box-desc-content {
@@ -1052,6 +1054,11 @@ footer {
       padding-top: 0;
       padding-left: 75px;
       font-size: 12px; } }
+
+@media (max-width: 768px) {
+  .ban-counter-icon {
+    width: 67px;
+    margin-left: -9px; } }
 
 @media (max-width: 340px) {
   .head-box-layout .head-box-desc-boxes-item span {
@@ -1845,13 +1852,23 @@ footer {
           -ms-flex-preferred-size: 100%;
               flex-basis: 100%;
           -ms-flex-pack: end;
-              justify-content: end; }
-        .pageban .pageban-counter .counter-number img {
-          max-width: 56px;
-          max-height: 58px; }
+              justify-content: end;
+          margin-bottom: 10px; }
+          .pageban .pageban-counter-item:last-child {
+            margin-bottom: 0; }
+            .pageban .pageban-counter-item:last-child .counter-number img {
+              max-width: 24px; }
+        .pageban .pageban-counter .counter-number {
+          min-width: 100px;
+          text-align: right; }
+          .pageban .pageban-counter .counter-number img {
+            max-width: 56px;
+            max-height: 58px; }
         .pageban .pageban-counter .counter-title {
           font-size: 12px;
-          line-height: 130%; }
+          line-height: 130%;
+          max-width: 100%;
+          padding-right: inherit; }
       .pageban .pageban-firm {
         padding: 6px 0; }
       .pageban .pageban-firm-desc {
@@ -2701,10 +2718,10 @@ footer {
   max-width: 138px;
   max-height: 138px;
   margin: auto; }
-.ourteam-cover img {
+  .ourteam-cover img {
     max-width: 138px;
-    border-radius: 50%;
-}
+    border-radius: 50%; }
+
 .ourteam-name {
   padding-top: 24px;
   font-weight: normal;

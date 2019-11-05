@@ -130,8 +130,19 @@
       &-item {
         flex-basis: 100%;
         justify-content: end;
+        margin-bottom: 10px;
+        &:last-child {
+          margin-bottom: 0;
+          .counter-number {
+            img {
+              max-width: 24px;
+            }
+          }
+        }
       }
       .counter-number {
+        min-width: 100px;
+        text-align: right;
         img {
           max-width: 56px;
           max-height: 58px;
@@ -140,6 +151,8 @@
       .counter-title {
         font-size: 12px;
         line-height: 130%;
+        max-width: 100%;
+        padding-right: inherit;
       }
     }
     .pageban-firm {
